@@ -20,4 +20,5 @@ Basic configuration with dockers
 
 Basic configuration for administrators.
 
+For futher information about Vagrant, please visit the main site.
 
