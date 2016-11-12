@@ -25,6 +25,9 @@ For futher information about Vagrant, please visit the main site.
 The process of the sotware architecture is an Art and hard to measure, in order to understand the real value of the practice you need to practice.
 
 Conflicts
+
 New documentation of the system,
+
 Process could be the best 
+
 Just a test.
