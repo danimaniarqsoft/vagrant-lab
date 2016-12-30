@@ -1,0 +1,25 @@
+# Systemd unit file for tomcat
+
+[Unit]
+Description=Jakarta Tomcat 8 server
+After=syslog.target network.target
+Conflicts=glassfish.service
+
+[Service]
+Type=forking
+
+Environment=JAVA_HOME=/usr/java/current
+Environment=CATALINA_PID=/usr/local/tomcat/current/temp/tomcat.pid
+Environment=CATALINA_HOME=/usr/local/tomcat/current
+Environment=CATALINA_BASE=/usr/local/tomcat/current
+Environment='CATALINA_OPTS=-XX:PermSize=128m -XX:MaxPermSize=512m -Xms512M -Xmx2048M -server -XX:+UseParallelGC -Djava.library.path=/usr/local/apr/lib'
+Environment='JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/urandom'
+
+ExecStart=/usr/local/tomcat/current/bin/startup.sh
+ExecStop=/usr/local/tomcat/current/bin/shutdown.sh
+
+User=tomcat
+Group=tomcat
+
+[Install]
+WantedBy=multi-user.target
