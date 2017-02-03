@@ -9,6 +9,8 @@ printf "\n" >> /home/vagrant/.bashrc
 
 sudo yum -y check-update
 
+sudo yum -y install vim
+
 curl -fsSL https://get.docker.com/ | sh
 
 sudo systemctl start docker
