@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-07T01:25:21.890Z",
+	"__export_date": "2017-02-07T06:12:34.230Z",
 	"__export_source": "insomnia.desktop.app:v4.2.9",
 	"resources": [
 		{
@@ -64,14 +64,14 @@
 		{
 			"_id": "req_3745edf702d34b7986f33fa967a69c88",
 			"parentId": "fld_52079f2e4b2b49099d4993fa65eca84f",
-			"modified": 1486427170375,
+			"modified": 1486447409768,
 			"created": 1484985109760,
 			"url": "http://orion.dads.infotec.mx:1026/v2/entities/Room1/attrs",
 			"name": "update-entity-id",
 			"method": "PUT",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"pressure\": {\n    \"metadata\": {},\n    \"type\": \"Integer\",\n    \"value\": 720\n  },\n  \"temperature\": {\n    \"metadata\": {},\n    \"type\": \"Float\",\n    \"value\": 23\n  }\n}"
+				"text": "{\n  \"pressure\": {\n    \"metadata\": {},\n    \"type\": \"Integer\",\n    \"value\": 719\n  },\n  \"temperature\": {\n    \"metadata\": {},\n    \"type\": \"Float\",\n    \"value\": 70\n  }\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -87,7 +87,7 @@
 		{
 			"_id": "req_91e1acbdd7ca40b3bd206a4b8e9a56cf",
 			"parentId": "fld_52079f2e4b2b49099d4993fa65eca84f",
-			"modified": 1486430122868,
+			"modified": 1486447425920,
 			"created": 1484985109784,
 			"url": "http://orion.dads.infotec.mx:1026/v2/subscriptions",
 			"name": "subscription",
@@ -178,7 +178,7 @@
 		{
 			"_id": "req_9e1acf8f8718423787caed74eb2d08eb",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486427169731,
+			"modified": 1486447438088,
 			"created": 1484983629783,
 			"url": "http://orion.dads.infotec.mx:1026/v2/entities",
 			"name": "create-entity",

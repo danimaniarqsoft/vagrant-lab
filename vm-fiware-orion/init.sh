@@ -11,6 +11,9 @@ sudo yum -y check-update
 
 sudo yum -y install vim
 
+sudo systemctl start firewalld.service
+sudo systemctl enable firewalld.service
+
 curl -fsSL https://get.docker.com/ | sh
 
 sudo systemctl start docker
