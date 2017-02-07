@@ -46,5 +46,7 @@ sudo chown -R vagrant:vagrant fiware-orion-subscriber
 sudo yum -y install mongodb-org
 sudo systemctl start mongod
 
-cd /fiware-orion-subscriber
-mvn spring-boot:run
+## Ejecutar al ingresar a la maquina virtual
+
+# cd /fiware-orion-subscriber
+# mvn spring-boot:run
