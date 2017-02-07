@@ -4,21 +4,47 @@ printf "\n" >> /home/vagrant/.bashrc
 echo 'export PS1="\[\e[01;34m\]\u\[\e[0m\]\[\e[01;37m\]:\H:\w\[\e[0m\]\[\e[00;37m\]\n\\$ \[\e[0m\]"' >> /home/vagrant/.bashrc
 printf "\n" >> /home/vagrant/.bashrc
 
+sudo yum clean all
+sudo yum -y update
+
+#Downloading configuration files for java, maven, and mongodb
+
+curl https://gist.githubusercontent.com/danimaniarqsoft/177b6c8cb579f0cac87b8d13d74e886c/raw/619c9e672496cddab49e92f44765a295b488ffb0/mongodb-org.repo > mongodb-org.repo
+curl https://gist.githubusercontent.com/danimaniarqsoft/177b6c8cb579f0cac87b8d13d74e886c/raw/619c9e672496cddab49e92f44765a295b488ffb0/maven.sh > maven.sh
+curl https://gist.githubusercontent.com/danimaniarqsoft/177b6c8cb579f0cac87b8d13d74e886c/raw/619c9e672496cddab49e92f44765a295b488ffb0/java.sh > java.sh
+
+
+sudo mv mongodb-org.repo /etc/yum.repos.d/
+sudo mv maven.sh /etc/profile.d/
+sudo mv java.sh /etc/profile.d/
+
+yum repolist
 
 #  install the consumer server
+## Install Java 8
+curl -L -b "oraclelicense=a" http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.rpm -O
+sudo yum -y localinstall jdk-8u111-linux-x64.rpm
 
-sudo yum install -y epel-release
-sudo yum install -y python-pip
-sudo pip install --upgrade pip
-sudo pip install backports.ssl_match_hostname --upgrade
-sudo pip install flask
-sudo yum -y upgrade python*
-curl https://raw.githubusercontent.com/telefonicaid/fiware-orion/master/scripts/accumulator-server.py > accumulator-server.py
-sudo chmod a+x accumulator-server.py
-sudo systemctl start firewalld.service
-sudo firewall-cmd --permanent --add-port=1028/tcp
-sudo firewall-cmd --reload
+### Crear liga java.csh
+sudo ln -s /etc/profile.d/java.sh /etc/profile.d/java.csh
 
-# execute the next command
-# ./accumulator-server.py --port 1028 --url /accumulate --host 192.168.83.3 --pretty-print -v
+## Install Maven
+curl http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz > apache-maven-3.3.9-bin.tar.gz
+sudo mv apache-maven-3.3.9-bin.tar.gz /opt
+sudo tar xzf /opt/apache-maven-3.3.9-bin.tar.gz -C /opt
+sudo ln -s /opt/apache-maven-3.3.9 /opt/maven
 
+source /etc/profile.d/maven.sh
+source /etc/profile.d/java.sh
+source /etc/profile.d/java.csh
+
+## Install Git
+sudo yum -y install git
+git clone https://github.com/danimaniarqsoft/fiware-orion-subscriber.git
+sudo chown -R vagrant:vagrant fiware-orion-subscriber
+## Install Mongodb
+sudo yum -y install mongodb-org
+sudo systemctl start mongod
+
+cd /fiware-orion-subscriber
+mvn spring-boot:run
