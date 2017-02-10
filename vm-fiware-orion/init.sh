@@ -8,14 +8,9 @@ printf "\n" >> /home/vagrant/.bashrc
 # install dockers
 
 sudo yum -y check-update
-
 sudo yum -y install vim
-
-# sudo systemctl start firewalld.service
-# sudo systemctl enable firewalld.service
-
 curl -fsSL https://get.docker.com/ | sh
-
+curl https://gist.githubusercontent.com/danimaniarqsoft/177b6c8cb579f0cac87b8d13d74e886c/raw/cdbdd584defb996b570ec068388405ec2f017741/docker-compose.yml > docker-compose.yml
 sudo systemctl start docker
 sudo systemctl status docker
 sudo systemctl enable docker
