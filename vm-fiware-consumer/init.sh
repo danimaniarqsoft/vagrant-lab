@@ -48,5 +48,4 @@ sudo systemctl start mongod
 
 ## Ejecutar al ingresar a la maquina virtual
 
-# cd /fiware-orion-subscriber
-# mvn spring-boot:run
+mvn -f fiware-orion-subscriber/pom.xml spring-boot:run

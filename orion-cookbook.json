@@ -1,0 +1,843 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2017-02-11T03:06:10.831Z",
+	"__export_source": "insomnia.desktop.app:v4.2.11",
+	"resources": [
+		{
+			"_id": "wrk_e87f520357d945af98e69bc3e11abfd0",
+			"parentId": null,
+			"modified": 1486752132053,
+			"created": 1484983311232,
+			"name": "Orion Cookbook",
+			"description": "",
+			"certificates": [],
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_4faea54a6739421db183baa214fd1759",
+			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
+			"modified": 1486752132052,
+			"created": 1484983327864,
+			"name": "Base Environment",
+			"data": {},
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_714dda2e109a4f7dbe858612305a218a",
+			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
+			"modified": 1486752132051,
+			"created": 1484983458673,
+			"name": "Default Jar",
+			"cookies": [],
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_52079f2e4b2b49099d4993fa65eca84f",
+			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
+			"modified": 1486752132051,
+			"created": 1484985109619,
+			"name": "orion-subscriptions",
+			"environment": {},
+			"metaSortKey": -1484983424237,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
+			"modified": 1486752132050,
+			"created": 1484983424237,
+			"name": "orion-basic-operations",
+			"environment": {},
+			"metaSortKey": -1484983424237,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_e583203d42ba44899308590fbd472780",
+			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
+			"modified": 1486764831894,
+			"created": 1486764807718,
+			"name": "orion-api-cookbook",
+			"environment": {},
+			"metaSortKey": -1486764807718,
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_06d5d783af634f4aa67c3cc008c0a4f5",
+			"parentId": "env_4faea54a6739421db183baa214fd1759",
+			"modified": 1486752132048,
+			"created": 1484983411004,
+			"name": "New Environment",
+			"data": {},
+			"_type": "environment"
+		},
+		{
+			"_id": "req_035859f787764f41bac8fdc5ff0f8aff",
+			"parentId": "fld_52079f2e4b2b49099d4993fa65eca84f",
+			"modified": 1486776247964,
+			"created": 1486764288882,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/Room80/attrs?type=Thing",
+			"name": "update-entity-id-duplicity-type",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"pressure\": {\n    \"metadata\": {},\n    \"type\": \"Integer\",\n    \"value\": 9\n  },\n  \"temperature\": {\n    \"metadata\": {},\n    \"type\": \"Float\",\n    \"value\": 70\n  }\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1484983440569,
+			"_type": "request"
+		},
+		{
+			"_id": "req_3745edf702d34b7986f33fa967a69c88",
+			"parentId": "fld_52079f2e4b2b49099d4993fa65eca84f",
+			"modified": 1486776239442,
+			"created": 1484985109760,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/Room80/attrs?type=Thing",
+			"name": "update-entity-id",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"pressure\": {\n    \"metadata\": {},\n    \"type\": \"Integer\",\n    \"value\": 9\n  },\n  \"temperature\": {\n    \"metadata\": {},\n    \"type\": \"Float\",\n    \"value\": 70\n  }\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1484983440570,
+			"_type": "request"
+		},
+		{
+			"_id": "req_91e1acbdd7ca40b3bd206a4b8e9a56cf",
+			"parentId": "fld_52079f2e4b2b49099d4993fa65eca84f",
+			"modified": 1486776235052,
+			"created": 1484985109784,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/subscriptions",
+			"name": "subscription",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"description\": \"A subscription to get info about Room1\",\n  \"subject\": {\n    \"entities\": [\n      {\n        \"id\": \"Room99\",\n        \"type\": \"Room\"\n      }\n    ],\n    \"condition\": {\n      \"attrs\": [\n        \"pressure\"\n      ]\n    }\n  },\n  \"notification\": {\n    \"http\": {\n      \"url\": \"http://192.168.83.2:8080/notifications\"\n    },\n    \"attrs\": [\n      \"temperature\"\n    ]\n  },\n  \"expires\": \"2018-01-01T14:00:00.00Z\",\n  \"throttling\": 5\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1484983440621,
+			"_type": "request"
+		},
+		{
+			"_id": "req_033dcd7e2f4f42d788855bd4a2c6106f",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486776201448,
+			"created": 1484984423500,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "get-entities",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1484983440570.5,
+			"_type": "request"
+		},
+		{
+			"_id": "req_2a05bf1774e54a098286c81f7cae174e",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486776218399,
+			"created": 1484984492135,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "get-all-entities",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1484983440520,
+			"_type": "request"
+		},
+		{
+			"_id": "req_393b02fe9dde4d209fb1270643c4164e",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486776222143,
+			"created": 1484984808809,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities?options=keyValues",
+			"name": "get-all-entities-key-values",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1484983440519,
+			"_type": "request"
+		},
+		{
+			"_id": "req_5fde647c737f432d940779e091f79bee",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486776214188,
+			"created": 1484984596228,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/Room1?options=keyValues",
+			"name": "update-entity-key-values",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1484983440569,
+			"_type": "request"
+		},
+		{
+			"_id": "req_782bb2c58e624ecfa9994fecefe42624",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486776210311,
+			"created": 1486756839913,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/Room99/attrs/temperature/value",
+			"name": "update-entity-attrs-value",
+			"method": "PUT",
+			"body": {
+				"mimeType": "",
+				"text": "23"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "text/plain"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1484983440569,
+			"_type": "request"
+		},
+		{
+			"_id": "req_9e1acf8f8718423787caed74eb2d08eb",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486780374363,
+			"created": 1484983629783,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities?options=keyValues",
+			"name": "create-entity",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"id\": \"Room1\",\n  \"type\": \"Room\",\n  \"temperature\": {\n    \"value\": 23,\n    \"type\": \"Float\"\n  },\n  \"pressure\": {\n    \"value\": 720,\n    \"type\": \"Integer\"\n  }\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1484983440571,
+			"_type": "request"
+		},
+		{
+			"_id": "req_a3764e5f99754e5da4eed610aeb2202b",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486776205956,
+			"created": 1484984115014,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/Room1/attrs",
+			"name": "update-entity-id",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"pressure\": {\n    \"metadata\": {},\n    \"type\": \"Integer\",\n    \"value\": 720\n  },\n  \"temperature\": {\n    \"metadata\": {},\n    \"type\": \"Float\",\n    \"value\": 23\n  }\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1484983440570,
+			"_type": "request"
+		},
+		{
+			"_id": "req_b260e8b0119a4fb990833494145f879e",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486776227439,
+			"created": 1484984936224,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/Room1?options=values&attrs=pressure,temperature",
+			"name": "get-all-entities-values",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1484983440518,
+			"_type": "request"
+		},
+		{
+			"_id": "req_bb94965b56ce4f30bf75793a8239d832",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486776176034,
+			"created": 1484983440621,
+			"url": "http://orion.fiware.infotec.mx:1026/version",
+			"name": "check-version",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1484983440621,
+			"_type": "request"
+		},
+		{
+			"_id": "req_db6683e3b86d49d5a47a0125ffb52568",
+			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
+			"modified": 1486776230826,
+			"created": 1484985002664,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities?q=temperature>22",
+			"name": "get-entities-by-temperature",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1484983440517,
+			"_type": "request"
+		},
+		{
+			"_id": "fld_05f30115e6414a83a752f93a72e951fe",
+			"parentId": "fld_e583203d42ba44899308590fbd472780",
+			"modified": 1486777203397,
+			"created": 1486776933088,
+			"name": "context-entity",
+			"environment": {},
+			"metaSortKey": -1486776984573,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_1a2b3572c0fc4e858eba4db721253cfe",
+			"parentId": "fld_e583203d42ba44899308590fbd472780",
+			"modified": 1486777211505,
+			"created": 1486776984548,
+			"name": "query-context",
+			"environment": {},
+			"metaSortKey": -1486776984548,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_250ba2d9b8ad4a179218b81eb1ac18fc",
+			"parentId": "fld_e583203d42ba44899308590fbd472780",
+			"modified": 1486777228713,
+			"created": 1486777127957,
+			"name": "context-attributes",
+			"environment": {},
+			"metaSortKey": -1486776984448,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_6e2eb59b959f4a709c6e0205f9ff9b1a",
+			"parentId": "fld_e583203d42ba44899308590fbd472780",
+			"modified": 1486777221817,
+			"created": 1486777084241,
+			"name": "provided-context",
+			"environment": {},
+			"metaSortKey": -1486776984498,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_a83a8460ffc74d78a5da7c92a63db932",
+			"parentId": "fld_e583203d42ba44899308590fbd472780",
+			"modified": 1486777236061,
+			"created": 1486777149281,
+			"name": "subscriptions",
+			"environment": {},
+			"metaSortKey": -1486776984398,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_bfcda1a462cf44a395e4920960748e81",
+			"parentId": "fld_e583203d42ba44899308590fbd472780",
+			"modified": 1486777188501,
+			"created": 1486776962152,
+			"name": "api-root",
+			"environment": {},
+			"metaSortKey": -1486776984648,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_d4f3aeb7ec2541f09583d97ab9003de6",
+			"parentId": "fld_e583203d42ba44899308590fbd472780",
+			"modified": 1486777196250,
+			"created": 1486776914711,
+			"name": "entity-collection",
+			"environment": {},
+			"metaSortKey": -1486776984598,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_38ced29215734d0da4cf76ee2bf8be97",
+			"parentId": "fld_05f30115e6414a83a752f93a72e951fe",
+			"modified": 1486779659910,
+			"created": 1486779626432,
+			"name": "retrieve-entity-data",
+			"environment": {},
+			"metaSortKey": -1486779640154,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_953d309872304d15936a677fcfb69e58",
+			"parentId": "fld_05f30115e6414a83a752f93a72e951fe",
+			"modified": 1486779640104,
+			"created": 1486779640104,
+			"name": "partial-entity-retrieval",
+			"environment": {},
+			"metaSortKey": -1486779640104,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_a074d17154264ec7bdacd0211fea1f1b",
+			"parentId": "fld_1a2b3572c0fc4e858eba4db721253cfe",
+			"modified": 1486780774464,
+			"created": 1486780774464,
+			"name": "query-entities",
+			"environment": {},
+			"metaSortKey": -1486780774464,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_92644ac8e85b42e3a750449f626acef0",
+			"parentId": "fld_bfcda1a462cf44a395e4920960748e81",
+			"modified": 1486777286894,
+			"created": 1486777250363,
+			"url": "http://orion.fiware.infotec.mx:1026/v2",
+			"name": "retrive-entry-points",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1484983440619,
+			"_type": "request"
+		},
+		{
+			"_id": "fld_0c31f1b6080441dcb73df9c4d3429059",
+			"parentId": "fld_d4f3aeb7ec2541f09583d97ab9003de6",
+			"modified": 1486778175544,
+			"created": 1486777380840,
+			"name": "list-all-entities",
+			"environment": {},
+			"metaSortKey": -1486778168566,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_5065860481984e9a953f8b543e6958e9",
+			"parentId": "fld_d4f3aeb7ec2541f09583d97ab9003de6",
+			"modified": 1486778168516,
+			"created": 1486778168516,
+			"name": "filter-entities",
+			"environment": {},
+			"metaSortKey": -1486778168516,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_3170478f26c0428e83384257242c054d",
+			"parentId": "fld_38ced29215734d0da4cf76ee2bf8be97",
+			"modified": 1486780113901,
+			"created": 1486779685849,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/myDevice-wastecontainer-sensor-345",
+			"name": "by-id",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "options",
+					"value": "keyValues"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486778187711,
+			"_type": "request"
+		},
+		{
+			"_id": "req_9f2ec2d353be42a3a2c818804a0508b9",
+			"parentId": "fld_38ced29215734d0da4cf76ee2bf8be97",
+			"modified": 1486780289437,
+			"created": 1486780212936,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/myDevice-wastecontainer-sensor-345",
+			"name": "by-id-and-type",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "type",
+					"value": "DeviceModel"
+				}
+			],
+			"headers": [
+				{
+					"name": "",
+					"value": ""
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486778187709,
+			"_type": "request"
+		},
+		{
+			"_id": "req_d23f231320cf4caca196c8c8d49b34d6",
+			"parentId": "fld_38ced29215734d0da4cf76ee2bf8be97",
+			"modified": 1486780188405,
+			"created": 1486780148223,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/id-not-exist",
+			"name": "by-id-not-exist",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "options",
+					"value": "keyValues"
+				}
+			],
+			"headers": [
+				{
+					"name": "",
+					"value": ""
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486778187710,
+			"_type": "request"
+		},
+		{
+			"_id": "req_5fed1e9b543f4911964928f4f9dbc2f9",
+			"parentId": "fld_953d309872304d15936a677fcfb69e58",
+			"modified": 1486780674521,
+			"created": 1486780305024,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/Room1",
+			"name": "one-entity-attribute",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "attrs",
+					"value": "temperature"
+				}
+			],
+			"headers": [
+				{
+					"name": "",
+					"value": ""
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486778187708,
+			"_type": "request"
+		},
+		{
+			"_id": "req_ec504e26bdbd4b8da531dc0113230fc3",
+			"parentId": "fld_953d309872304d15936a677fcfb69e58",
+			"modified": 1486781173553,
+			"created": 1486780678114,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities/Room1",
+			"name": "several-entity-attributes",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "attrs",
+					"value": "temperature,pressure"
+				}
+			],
+			"headers": [
+				{
+					"name": "",
+					"value": ""
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486778187707,
+			"_type": "request"
+		},
+		{
+			"_id": "req_ebd16fa485c949c6843bea6a13bc90a3",
+			"parentId": "fld_a074d17154264ec7bdacd0211fea1f1b",
+			"modified": 1486782316283,
+			"created": 1486780751706,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "query-by-attribute-content",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "q",
+					"value": "temperature>20"
+				}
+			],
+			"headers": [
+				{
+					"name": "Accept",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486778187706,
+			"_type": "request"
+		},
+		{
+			"_id": "req_22c1b0f1a8cd4ce0ab4633b52bfe933b",
+			"parentId": "fld_0c31f1b6080441dcb73df9c4d3429059",
+			"modified": 1486777474896,
+			"created": 1486777395950,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "normalized-mode",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486777395950,
+			"_type": "request"
+		},
+		{
+			"_id": "req_40dc8d90a7e046fb8ce66f0ed9df5f53",
+			"parentId": "fld_0c31f1b6080441dcb73df9c4d3429059",
+			"modified": 1486777631391,
+			"created": 1486777399015,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "key-values-mode",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "options",
+					"value": "keyValues"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486777395949,
+			"_type": "request"
+		},
+		{
+			"_id": "req_e199257d0fd64f81b9116dd63be3e47b",
+			"parentId": "fld_0c31f1b6080441dcb73df9c4d3429059",
+			"modified": 1486778146683,
+			"created": 1486777654700,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "pagination",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "options",
+					"value": "count"
+				},
+				{
+					"name": "limit",
+					"value": "2"
+				},
+				{
+					"name": "offset",
+					"value": "3"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486777395948,
+			"_type": "request"
+		},
+		{
+			"_id": "req_140473542f4e4f0a95316d7a8090dd0c",
+			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
+			"modified": 1486779335191,
+			"created": 1486778641292,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "by-id-list",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "id",
+					"value": "Room1,Room2,Room3"
+				},
+				{
+					"name": "options",
+					"value": "keyValues"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486778187715,
+			"_type": "request"
+		},
+		{
+			"_id": "req_1605a70c44b343eaa65fa4587490ac28",
+			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
+			"modified": 1486779452621,
+			"created": 1486778656592,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "by-type-list",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "type",
+					"value": "Room,Tree,DeviceModel"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486778187714,
+			"_type": "request"
+		},
+		{
+			"_id": "req_3cf30b78b35c4afabeb7413d310b5ff0",
+			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
+			"modified": 1486779534088,
+			"created": 1486779523464,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "by-pattern-matching (Copy)",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "idPattern",
+					"value": "^0115206c51f60b48b77e4.*"
+				},
+				{
+					"name": "options",
+					"value": "keyValues"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486778187712,
+			"_type": "request"
+		},
+		{
+			"_id": "req_4a9de804fa80400dbd659f0e114ac89f",
+			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
+			"modified": 1486779448230,
+			"created": 1486778616409,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "by-type",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "type",
+					"value": "DeviceModel"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486778187716,
+			"_type": "request"
+		},
+		{
+			"_id": "req_b68cb7f974fd490a88530c9904489a1f",
+			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
+			"modified": 1486779504062,
+			"created": 1486778670932,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "by-pattern-matching",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "idPattern",
+					"value": "^0115206c51f60b48b77e4.*"
+				},
+				{
+					"name": "options",
+					"value": "keyValues"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486778187713,
+			"_type": "request"
+		},
+		{
+			"_id": "req_ce198338a41941bf9b5a371db5a859e9",
+			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
+			"modified": 1486779345486,
+			"created": 1486778196079,
+			"url": "http://orion.fiware.infotec.mx:1026/v2/entities",
+			"name": "by-id",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "id",
+					"value": "Room1"
+				},
+				{
+					"name": "options",
+					"value": "keyValues"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486778187717,
+			"_type": "request"
+		}
+	]
+}
