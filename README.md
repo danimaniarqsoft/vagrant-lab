@@ -4,13 +4,13 @@ Common Configuration based on my own experience, for more information about `Vag
 
 Below is a list of Vbox Configurated here:
 
-1. centos7
-2. dockers
-3. admin
+1. vm-fiware-orion
+2. vm-fiware-consumer
 
-## centos7
+## vm-fiware-orion
 
-Base configurations for general proposes
+This virtual machine has the Orion Context Broker. It is an implementation of the Publish/Subscribe Context Broker , providing the NGSI9 and NGSI10 interfaces 
+
 
 ## dockers
 
