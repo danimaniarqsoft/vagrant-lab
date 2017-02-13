@@ -1,0 +1,263 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2017-02-13T06:00:33.417Z",
+	"__export_source": "insomnia.desktop.app:v4.2.11",
+	"resources": [
+		{
+			"_id": "wrk_daae2d648f824923abdaaf8c8da8fb09",
+			"parentId": null,
+			"modified": 1486954727960,
+			"created": 1486952494949,
+			"name": "NGSI V2 showcase",
+			"description": "",
+			"certificates": [],
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_d7999f80cffd4794b9d3b8f8c75971df",
+			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
+			"modified": 1486952993301,
+			"created": 1486952507055,
+			"name": "Base Environment",
+			"data": {
+				"base_url": "http://orion.fiware.infotec.mx:1026"
+			},
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_4aab2e55427540faa76ac020f6454356",
+			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
+			"modified": 1486953028181,
+			"created": 1486953028181,
+			"name": "Default Jar",
+			"cookies": [],
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
+			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
+			"modified": 1486956194653,
+			"created": 1486956181337,
+			"name": "entities",
+			"environment": {},
+			"metaSortKey": -1486955629398,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_47828252f50c438999eed82844735565",
+			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
+			"modified": 1486964218477,
+			"created": 1486964178157,
+			"name": "subscriptions",
+			"environment": {},
+			"metaSortKey": -1486955629298,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_9a412dce4c024c4181c9ec2e3ae17381",
+			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
+			"modified": 1486955629398,
+			"created": 1486955629398,
+			"name": "retrieve-api-resources",
+			"environment": {},
+			"metaSortKey": -1486955629398,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_c7263e9fbabc492ab6c908e3d2b0f9e7",
+			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
+			"modified": 1486962786142,
+			"created": 1486960988646,
+			"name": "attributes",
+			"environment": {},
+			"metaSortKey": -1486955629348,
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_009ebadc5bc0471f9625b338f01a8730",
+			"parentId": "env_d7999f80cffd4794b9d3b8f8c75971df",
+			"modified": 1486955533392,
+			"created": 1486952790962,
+			"name": "development",
+			"data": {
+				"base_url": "http://orion.fiware.infotec.mx:1026"
+			},
+			"_type": "environment"
+		},
+		{
+			"_id": "env_f411a5b389d14713b4bbcb0852198421",
+			"parentId": "env_d7999f80cffd4794b9d3b8f8c75971df",
+			"modified": 1486953109800,
+			"created": 1486952798569,
+			"name": "production",
+			"data": {
+				"base_url": "http://orion.fiware.infotec.mx:1026"
+			},
+			"_type": "environment"
+		},
+		{
+			"_id": "req_54771f46899c4887ba58cb8a28756625",
+			"parentId": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
+			"modified": 1486964611729,
+			"created": 1486960902972,
+			"url": "{{base_url}}/v2/entities",
+			"name": "create-entity",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\": \"Room\",\n\t\"id\": \"Bcn-Welt-10\",\n\t\"temperature\": {\n\t\t\"value\": 21.7\n\t},\n\t\"humidity\": {\n\t\t\"value\": 60\n\t},\n\t\"location\": {\n\t\t\"type\": \"StructuredValue\",\n\t\t\"value\": {\n\t\t\t\"value\": \"41.3763726, 2.1864475\",\n\t\t\t\"type\": \"geo:point\",\n\t\t\t\"metadata\": {\n\t\t\t\t\"crs\": {\n\t\t\t\t\t\"value\": \"WGS84\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"otro\": {\n\t\t\t\t\"name\": \"otra\",\n\t\t\t\t\"prop\": \"propiedad\"\n\t\t\t}\n\t\t},\n\t\t\"metadata\": {}\n\t},\n\t\"otro\": {\n\t\t\"value\": \"propiedad\",\n\t\t\"type\": \"Text\"\n\t}\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "options",
+					"value": "keyValues"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486953006961,
+			"_type": "request"
+		},
+		{
+			"_id": "req_8be7c43e9ffc4558990072be3d78db60",
+			"parentId": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
+			"modified": 1486964654776,
+			"created": 1486964594924,
+			"url": "{{base_url}}/v2/entities/Bcn-Welt-10/attrs",
+			"name": "create-update-entity",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\n\t\"temperature\": {\n\t\t\"value\": 21.7\n\t},\n\t\"humidity\": {\n\t\t\"value\": 60\n\t},\n\t\"location\": {\n\t\t\"type\": \"StructuredValue\",\n\t\t\"value\": {\n\t\t\t\"value\": \"41.3763726, 2.1864475\",\n\t\t\t\"type\": \"geo:point\",\n\t\t\t\"metadata\": {\n\t\t\t\t\"crs\": {\n\t\t\t\t\t\"value\": \"WGS84\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"otro\": {\n\t\t\t\t\"name\": \"otra\",\n\t\t\t\t\"prop\": \"propiedad\"\n\t\t\t}\n\t\t},\n\t\t\"metadata\": {}\n\t},\n\t\"otro\": {\n\t\t\"value\": \"propiedad\",\n\t\t\"type\": \"Text\"\n\t}\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "options",
+					"value": "keyValues"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486953006960,
+			"_type": "request"
+		},
+		{
+			"_id": "req_9aa16bf28f824f12bd6f68973fe6632a",
+			"parentId": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
+			"modified": 1486961681054,
+			"created": 1486956181358,
+			"url": "{{base_url}}/v2/entities",
+			"name": "list-entities",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486953006962,
+			"_type": "request"
+		},
+		{
+			"_id": "req_c50edddf141f484a8f16d0fb54c5a4e9",
+			"parentId": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
+			"modified": 1486963795064,
+			"created": 1486960988675,
+			"url": "{{base_url}}/v2/entities/Bcn-Welt-10",
+			"name": "entity-by-id",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "type",
+					"value": "Room"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486953006911,
+			"_type": "request"
+		},
+		{
+			"_id": "req_dd6c105b0f6a481b98058941da7e25d3",
+			"parentId": "fld_47828252f50c438999eed82844735565",
+			"modified": 1486965579425,
+			"created": 1486964191011,
+			"url": "{{base_url}}/v2/subscriptions",
+			"name": "custom-notification",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"description\": \"Update average rating\",\n\t\"subject\": {\n\t\t\"entities\": [\n\t\t\t{\n\t\t\t\t\"id\": \"Bcn-Welt-10\",\n\t\t\t\t\"type\": \"Room\"\n\t\t\t}\n\t\t],\n\t\t\"condition\": {\n\t\t\t\"attrs\": [\n\t\t\t\t\"temperature\"\n\t\t\t]\n\t\t}\n\t},\n\t\"notification\": {\n\t\t\"httpCustom\": {\n\t\t\t\"url\": \"http://consumer.fiware.infotec.mx:8080/notifications\",\n\t\t\t\"headers\": {\n\t\t\t\t\"Content-Type\": \"text/plain\"\n\t\t\t},\n\t\t\t\"method\": \"POST\",\n\t\t\t\"qs\": {\n\t\t\t\t\"type\": \"${type}\"\n\t\t\t},\n\t\t\t\"payload\": \"The temperature is ${temperature} degrees\"\n\t\t},\n\t\t\"attrs\": [\n\t\t\t\"temperature\"\n\t\t]\n\t},\n\t\"expires\": \"2020-04-05T14:00:00.00Z\",\n\t\"throttling\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486964191011,
+			"_type": "request"
+		},
+		{
+			"_id": "req_a6310f58d9294f35919ff6263ff97640",
+			"parentId": "fld_9a412dce4c024c4181c9ec2e3ae17381",
+			"modified": 1486956165653,
+			"created": 1486953006962,
+			"url": "{{base_url}}/v2",
+			"name": "get-resources",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486953006962,
+			"_type": "request"
+		},
+		{
+			"_id": "req_c7332d2c7b9549dfa57f0df2849647c2",
+			"parentId": "fld_c7263e9fbabc492ab6c908e3d2b0f9e7",
+			"modified": 1486962805833,
+			"created": 1486961622045,
+			"url": "{{base_url}}/v2/entities/entityId",
+			"name": "attribute-by-entity-id",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "type",
+					"value": "Room"
+				},
+				{
+					"name": "attrs",
+					"value": "temperature,humidity"
+				},
+				{
+					"name": "options",
+					"value": "values"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1486953006961,
+			"_type": "request"
+		}
+	]
+}
