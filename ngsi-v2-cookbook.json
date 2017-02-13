@@ -1,13 +1,13 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-13T02:55:12.219Z",
+	"__export_date": "2017-02-13T06:49:54.309Z",
 	"__export_source": "insomnia.desktop.app:v4.2.11",
 	"resources": [
 		{
 			"_id": "wrk_e87f520357d945af98e69bc3e11abfd0",
 			"parentId": null,
-			"modified": 1486954482751,
+			"modified": 1486955429821,
 			"created": 1484983311232,
 			"name": "NGSI V2 Cookbook",
 			"description": "The propouse of this workspace is to teach about NGSI V2",
@@ -17,7 +17,7 @@
 		{
 			"_id": "env_4faea54a6739421db183baa214fd1759",
 			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
-			"modified": 1486953139158,
+			"modified": 1486955429796,
 			"created": 1484983327864,
 			"name": "Base Environment",
 			"data": {
@@ -28,7 +28,7 @@
 		{
 			"_id": "jar_714dda2e109a4f7dbe858612305a218a",
 			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
-			"modified": 1486922996952,
+			"modified": 1486955429776,
 			"created": 1484983458673,
 			"name": "Default Jar",
 			"cookies": [],
@@ -37,37 +37,47 @@
 		{
 			"_id": "fld_52079f2e4b2b49099d4993fa65eca84f",
 			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
-			"modified": 1486922996671,
+			"modified": 1486968117356,
 			"created": 1484985109619,
 			"name": "orion-subscriptions",
 			"environment": {},
-			"metaSortKey": -1484983424237,
+			"metaSortKey": 150,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_654d70efbec142c1b5cab73d36d55836",
+			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
+			"modified": 1486968132214,
+			"created": 1486968108656,
+			"name": "batch-operations",
+			"environment": {},
+			"metaSortKey": 200,
 			"_type": "request_group"
 		},
 		{
 			"_id": "fld_e34bc05cf0cf472ab246c52ca6516e10",
 			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
-			"modified": 1486922996612,
+			"modified": 1486968115576,
 			"created": 1484983424237,
 			"name": "orion-basic-operations",
 			"environment": {},
-			"metaSortKey": -1484983424237,
+			"metaSortKey": 100,
 			"_type": "request_group"
 		},
 		{
 			"_id": "fld_e583203d42ba44899308590fbd472780",
 			"parentId": "wrk_e87f520357d945af98e69bc3e11abfd0",
-			"modified": 1486922996276,
+			"modified": 1486968115576,
 			"created": 1486764807718,
 			"name": "orion-api-cookbook",
 			"environment": {},
-			"metaSortKey": -1486764807718,
+			"metaSortKey": 0,
 			"_type": "request_group"
 		},
 		{
 			"_id": "env_06d5d783af634f4aa67c3cc008c0a4f5",
 			"parentId": "env_4faea54a6739421db183baa214fd1759",
-			"modified": 1486953149384,
+			"modified": 1486955429443,
 			"created": 1484983411004,
 			"name": "development",
 			"data": {
@@ -78,7 +88,7 @@
 		{
 			"_id": "req_035859f787764f41bac8fdc5ff0f8aff",
 			"parentId": "fld_52079f2e4b2b49099d4993fa65eca84f",
-			"modified": 1486953698456,
+			"modified": 1486955429322,
 			"created": 1486764288882,
 			"url": "{{ base_url }}/v2/entities/Room80/attrs?type=Thing",
 			"name": "update-entity-id-duplicity-type",
@@ -101,7 +111,7 @@
 		{
 			"_id": "req_3745edf702d34b7986f33fa967a69c88",
 			"parentId": "fld_52079f2e4b2b49099d4993fa65eca84f",
-			"modified": 1486953692925,
+			"modified": 1486955429186,
 			"created": 1484985109760,
 			"url": "{{ base_url }}/v2/entities/Room5/attrs",
 			"name": "update-entity-id",
@@ -124,7 +134,7 @@
 		{
 			"_id": "req_91e1acbdd7ca40b3bd206a4b8e9a56cf",
 			"parentId": "fld_52079f2e4b2b49099d4993fa65eca84f",
-			"modified": 1486953687441,
+			"modified": 1486955429039,
 			"created": 1484985109784,
 			"url": "{{ base_url }}/v2/subscriptions",
 			"name": "subscription",
@@ -145,9 +155,83 @@
 			"_type": "request"
 		},
 		{
+			"_id": "req_1721ea3aeb2d40d195b30468ad50637e",
+			"parentId": "fld_654d70efbec142c1b5cab73d36d55836",
+			"modified": 1486968108680,
+			"created": 1486968108680,
+			"url": "{{ base_url }}/v2/entities/Room5/attrs",
+			"name": "update-entity-id",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"pressure\": {\n    \"metadata\": {},\n    \"type\": \"Integer\",\n    \"value\": 98\n  },\n  \"temperature\": {\n    \"metadata\": {},\n    \"type\": \"Float\",\n    \"value\": 98\n  }\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1484983440570,
+			"_type": "request"
+		},
+		{
+			"_id": "req_7bfcaf80a2cf4821be64118e144da4f3",
+			"parentId": "fld_654d70efbec142c1b5cab73d36d55836",
+			"modified": 1486968451679,
+			"created": 1486968108687,
+			"url": "{{ base_url }}/v2/op/update",
+			"name": "batch-operation",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"actionType\": \"APPEND\",\n\t\"entities\": [\n\t\t{\n\t\t\t\"type\": \"Room\",\n\t\t\t\"id\": \"Bcn-Welt\",\n\t\t\t\"temperature\": {\n\t\t\t\t\"value\": 21.7\n\t\t\t},\n\t\t\t\"humidity\": {\n\t\t\t\t\"value\": 60\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"Room\",\n\t\t\t\"id\": \"Mad_Aud\",\n\t\t\t\"temperature\": {\n\t\t\t\t\"value\": 22.9\n\t\t\t},\n\t\t\t\"humidity\": {\n\t\t\t\t\"value\": 85\n\t\t\t}\n\t\t}\n\t]\n}"
+			},
+			"parameters": [
+				{
+					"name": "",
+					"value": ""
+				}
+			],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1484983440621,
+			"_type": "request"
+		},
+		{
+			"_id": "req_7e9b42723ac24b228389752d251b8097",
+			"parentId": "fld_654d70efbec142c1b5cab73d36d55836",
+			"modified": 1486968108676,
+			"created": 1486968108676,
+			"url": "{{ base_url }}/v2/entities/Room80/attrs?type=Thing",
+			"name": "update-entity-id-duplicity-type",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"pressure\": {\n    \"metadata\": {},\n    \"type\": \"Integer\",\n    \"value\": 9\n  },\n  \"temperature\": {\n    \"metadata\": {},\n    \"type\": \"Float\",\n    \"value\": 70\n  }\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1484983440569,
+			"_type": "request"
+		},
+		{
 			"_id": "req_033dcd7e2f4f42d788855bd4a2c6106f",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953631553,
+			"modified": 1486955428886,
 			"created": 1484984423500,
 			"url": "{{ base_url }}/v2/entities/Room3",
 			"name": "get-entities",
@@ -164,7 +248,7 @@
 		{
 			"_id": "req_2a05bf1774e54a098286c81f7cae174e",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953653093,
+			"modified": 1486955428749,
 			"created": 1484984492135,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "get-all-entities",
@@ -181,7 +265,7 @@
 		{
 			"_id": "req_393b02fe9dde4d209fb1270643c4164e",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953658917,
+			"modified": 1486955428595,
 			"created": 1484984808809,
 			"url": "{{ base_url }}/v2/entities?options=keyValues",
 			"name": "get-all-entities-key-values",
@@ -198,7 +282,7 @@
 		{
 			"_id": "req_5fde647c737f432d940779e091f79bee",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953647799,
+			"modified": 1486955428464,
 			"created": 1484984596228,
 			"url": "{{ base_url }}/v2/entities/Room1?options=keyValues",
 			"name": "update-entity-key-values",
@@ -215,7 +299,7 @@
 		{
 			"_id": "req_782bb2c58e624ecfa9994fecefe42624",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953643004,
+			"modified": 1486955428299,
 			"created": 1486756839913,
 			"url": "{{ base_url }}/v2/entities/Room99/attrs/temperature/value",
 			"name": "update-entity-attrs-value",
@@ -238,7 +322,7 @@
 		{
 			"_id": "req_9e1acf8f8718423787caed74eb2d08eb",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953625413,
+			"modified": 1486955428176,
 			"created": 1484983629783,
 			"url": "{{ base_url }}/v2/entities?options=keyValues",
 			"name": "create-entity",
@@ -261,7 +345,7 @@
 		{
 			"_id": "req_a3764e5f99754e5da4eed610aeb2202b",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953637352,
+			"modified": 1486955428040,
 			"created": 1484984115014,
 			"url": "{{ base_url }}/v2/entities/Room3/attrs",
 			"name": "update-entity-id",
@@ -288,7 +372,7 @@
 		{
 			"_id": "req_b260e8b0119a4fb990833494145f879e",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953665361,
+			"modified": 1486955427903,
 			"created": 1484984936224,
 			"url": "{{ base_url }}/v2/entities/Room1?options=values&attrs=pressure,temperature",
 			"name": "get-all-entities-values",
@@ -305,7 +389,7 @@
 		{
 			"_id": "req_bb94965b56ce4f30bf75793a8239d832",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953620205,
+			"modified": 1486955427783,
 			"created": 1484983440621,
 			"url": "{{ base_url }}/version",
 			"name": "check-version",
@@ -322,7 +406,7 @@
 		{
 			"_id": "req_db6683e3b86d49d5a47a0125ffb52568",
 			"parentId": "fld_e34bc05cf0cf472ab246c52ca6516e10",
-			"modified": 1486953670845,
+			"modified": 1486955427592,
 			"created": 1484985002664,
 			"url": "{{ base_url }}/v2/entities?q=temperature>22",
 			"name": "get-entities-by-temperature",
@@ -339,7 +423,7 @@
 		{
 			"_id": "fld_05f30115e6414a83a752f93a72e951fe",
 			"parentId": "fld_e583203d42ba44899308590fbd472780",
-			"modified": 1486922995189,
+			"modified": 1486955427590,
 			"created": 1486776933088,
 			"name": "context-entity",
 			"environment": {},
@@ -349,7 +433,7 @@
 		{
 			"_id": "fld_1a2b3572c0fc4e858eba4db721253cfe",
 			"parentId": "fld_e583203d42ba44899308590fbd472780",
-			"modified": 1486922995188,
+			"modified": 1486955427587,
 			"created": 1486776984548,
 			"name": "query-context",
 			"environment": {},
@@ -359,7 +443,7 @@
 		{
 			"_id": "fld_250ba2d9b8ad4a179218b81eb1ac18fc",
 			"parentId": "fld_e583203d42ba44899308590fbd472780",
-			"modified": 1486922995187,
+			"modified": 1486955427585,
 			"created": 1486777127957,
 			"name": "context-attributes",
 			"environment": {},
@@ -369,7 +453,7 @@
 		{
 			"_id": "fld_6e2eb59b959f4a709c6e0205f9ff9b1a",
 			"parentId": "fld_e583203d42ba44899308590fbd472780",
-			"modified": 1486922995186,
+			"modified": 1486955427582,
 			"created": 1486777084241,
 			"name": "provided-context",
 			"environment": {},
@@ -379,7 +463,7 @@
 		{
 			"_id": "fld_a83a8460ffc74d78a5da7c92a63db932",
 			"parentId": "fld_e583203d42ba44899308590fbd472780",
-			"modified": 1486922995184,
+			"modified": 1486955427579,
 			"created": 1486777149281,
 			"name": "subscriptions",
 			"environment": {},
@@ -389,7 +473,7 @@
 		{
 			"_id": "fld_bfcda1a462cf44a395e4920960748e81",
 			"parentId": "fld_e583203d42ba44899308590fbd472780",
-			"modified": 1486922995183,
+			"modified": 1486955427568,
 			"created": 1486776962152,
 			"name": "api-root",
 			"environment": {},
@@ -399,7 +483,7 @@
 		{
 			"_id": "fld_d4f3aeb7ec2541f09583d97ab9003de6",
 			"parentId": "fld_e583203d42ba44899308590fbd472780",
-			"modified": 1486922995181,
+			"modified": 1486955427567,
 			"created": 1486776914711,
 			"name": "entity-collection",
 			"environment": {},
@@ -409,7 +493,7 @@
 		{
 			"_id": "fld_38ced29215734d0da4cf76ee2bf8be97",
 			"parentId": "fld_05f30115e6414a83a752f93a72e951fe",
-			"modified": 1486922995180,
+			"modified": 1486955427565,
 			"created": 1486779626432,
 			"name": "retrieve-entity-data",
 			"environment": {},
@@ -419,7 +503,7 @@
 		{
 			"_id": "fld_953d309872304d15936a677fcfb69e58",
 			"parentId": "fld_05f30115e6414a83a752f93a72e951fe",
-			"modified": 1486922995179,
+			"modified": 1486955427563,
 			"created": 1486779640104,
 			"name": "partial-entity-retrieval",
 			"environment": {},
@@ -429,7 +513,7 @@
 		{
 			"_id": "fld_a074d17154264ec7bdacd0211fea1f1b",
 			"parentId": "fld_1a2b3572c0fc4e858eba4db721253cfe",
-			"modified": 1486922995178,
+			"modified": 1486955427561,
 			"created": 1486780774464,
 			"name": "query-entities",
 			"environment": {},
@@ -439,7 +523,7 @@
 		{
 			"_id": "fld_03a463120bba4848901882fae04aeaf2",
 			"parentId": "fld_250ba2d9b8ad4a179218b81eb1ac18fc",
-			"modified": 1486936205059,
+			"modified": 1486955427559,
 			"created": 1486936179773,
 			"name": "attribute-collection",
 			"environment": {},
@@ -449,7 +533,7 @@
 		{
 			"_id": "fld_1f46fdf5b9684d2486df80db115d0843",
 			"parentId": "fld_250ba2d9b8ad4a179218b81eb1ac18fc",
-			"modified": 1486936201980,
+			"modified": 1486955427557,
 			"created": 1486936201980,
 			"name": "single-attribute",
 			"environment": {},
@@ -459,7 +543,7 @@
 		{
 			"_id": "fld_ce71fb4bea124e269e705ade5646df2b",
 			"parentId": "fld_250ba2d9b8ad4a179218b81eb1ac18fc",
-			"modified": 1486937743710,
+			"modified": 1486955427556,
 			"created": 1486937714472,
 			"name": "attribute-values",
 			"environment": {},
@@ -469,7 +553,7 @@
 		{
 			"_id": "fld_1c8479b7e9ba46c19da1a0e4222bc4ce",
 			"parentId": "fld_6e2eb59b959f4a709c6e0205f9ff9b1a",
-			"modified": 1486930773796,
+			"modified": 1486955427554,
 			"created": 1486930740262,
 			"name": "create-new-entity",
 			"environment": {},
@@ -479,7 +563,7 @@
 		{
 			"_id": "fld_69c7c6a3285e4848a70c7e89c2370644",
 			"parentId": "fld_6e2eb59b959f4a709c6e0205f9ff9b1a",
-			"modified": 1486930771956,
+			"modified": 1486955427539,
 			"created": 1486930761422,
 			"name": "remove-entity",
 			"environment": {},
@@ -489,7 +573,7 @@
 		{
 			"_id": "req_0de80fdb32d54b10bceb820c592bbab0",
 			"parentId": "fld_a83a8460ffc74d78a5da7c92a63db932",
-			"modified": 1486953609189,
+			"modified": 1486955427502,
 			"created": 1486945921911,
 			"url": "{{ base_url }}/v2/subscriptions/58a01f9f3c7a8717d7a6c393",
 			"name": "remove-subscription",
@@ -506,7 +590,7 @@
 		{
 			"_id": "req_1680eaa3e391481fa379a7c418138c07",
 			"parentId": "fld_a83a8460ffc74d78a5da7c92a63db932",
-			"modified": 1486953589797,
+			"modified": 1486955427251,
 			"created": 1486943284630,
 			"url": "{{ base_url }}/v2/subscriptions/58a01f9f3c7a8717d7a6c393",
 			"name": "get-the-details-of-a-subscription",
@@ -523,7 +607,7 @@
 		{
 			"_id": "req_85fd8aa8fee6432cba64e470e452f9c9",
 			"parentId": "fld_a83a8460ffc74d78a5da7c92a63db932",
-			"modified": 1486953602848,
+			"modified": 1486955427246,
 			"created": 1486945775868,
 			"url": "{{ base_url }}/v2/subscriptions/58a01f9f3c7a8717d7a6c393",
 			"name": "partial-update-subscription",
@@ -546,7 +630,7 @@
 		{
 			"_id": "req_8959fda2029f44e8ad1d1717d363e1f4",
 			"parentId": "fld_a83a8460ffc74d78a5da7c92a63db932",
-			"modified": 1486953595177,
+			"modified": 1486955427243,
 			"created": 1486943578282,
 			"url": "{{ base_url }}/v2/subscriptions",
 			"name": "create-subscription",
@@ -569,7 +653,7 @@
 		{
 			"_id": "req_a57f711ed8bf472dbb71b81cae031e14",
 			"parentId": "fld_a83a8460ffc74d78a5da7c92a63db932",
-			"modified": 1486953584612,
+			"modified": 1486955427240,
 			"created": 1486943278661,
 			"url": "{{ base_url }}/v2/subscriptions",
 			"name": "pagination",
@@ -599,7 +683,7 @@
 		{
 			"_id": "req_c2aaede2da324a1b9044d5c35f14c3cb",
 			"parentId": "fld_a83a8460ffc74d78a5da7c92a63db932",
-			"modified": 1486953578761,
+			"modified": 1486955427237,
 			"created": 1486943131783,
 			"url": "{{ base_url }}/v2/subscriptions",
 			"name": "list-all-subscriptions-present-in-the-system",
@@ -616,7 +700,7 @@
 		{
 			"_id": "req_92644ac8e85b42e3a750449f626acef0",
 			"parentId": "fld_bfcda1a462cf44a395e4920960748e81",
-			"modified": 1486953170214,
+			"modified": 1486955427233,
 			"created": 1486777250363,
 			"url": "{{ base_url }}/v2",
 			"name": "retrive-entry-points",
@@ -633,7 +717,7 @@
 		{
 			"_id": "fld_0c31f1b6080441dcb73df9c4d3429059",
 			"parentId": "fld_d4f3aeb7ec2541f09583d97ab9003de6",
-			"modified": 1486922995175,
+			"modified": 1486955427228,
 			"created": 1486777380840,
 			"name": "list-all-entities",
 			"environment": {},
@@ -643,7 +727,7 @@
 		{
 			"_id": "fld_5065860481984e9a953f8b543e6958e9",
 			"parentId": "fld_d4f3aeb7ec2541f09583d97ab9003de6",
-			"modified": 1486922995173,
+			"modified": 1486955427211,
 			"created": 1486778168516,
 			"name": "filter-entities",
 			"environment": {},
@@ -653,7 +737,7 @@
 		{
 			"_id": "req_3170478f26c0428e83384257242c054d",
 			"parentId": "fld_38ced29215734d0da4cf76ee2bf8be97",
-			"modified": 1486953926117,
+			"modified": 1486955427200,
 			"created": 1486779685849,
 			"url": "{{ base_url }}/v2/entities/Room2",
 			"name": "by-id",
@@ -675,7 +759,7 @@
 		{
 			"_id": "req_9f2ec2d353be42a3a2c818804a0508b9",
 			"parentId": "fld_38ced29215734d0da4cf76ee2bf8be97",
-			"modified": 1486953959586,
+			"modified": 1486955426956,
 			"created": 1486780212936,
 			"url": "{{ base_url }}/v2/entities/Room2",
 			"name": "by-id-and-type",
@@ -702,7 +786,7 @@
 		{
 			"_id": "req_d23f231320cf4caca196c8c8d49b34d6",
 			"parentId": "fld_38ced29215734d0da4cf76ee2bf8be97",
-			"modified": 1486953357414,
+			"modified": 1486955426951,
 			"created": 1486780148223,
 			"url": "{{ base_url }}/v2/entities/id-not-exist",
 			"name": "by-id-not-exist",
@@ -729,7 +813,7 @@
 		{
 			"_id": "req_5fed1e9b543f4911964928f4f9dbc2f9",
 			"parentId": "fld_953d309872304d15936a677fcfb69e58",
-			"modified": 1486953995116,
+			"modified": 1486955426948,
 			"created": 1486780305024,
 			"url": "{{ base_url }}/v2/entities/Room1",
 			"name": "one-entity-attribute",
@@ -756,7 +840,7 @@
 		{
 			"_id": "req_ec504e26bdbd4b8da531dc0113230fc3",
 			"parentId": "fld_953d309872304d15936a677fcfb69e58",
-			"modified": 1486954018465,
+			"modified": 1486955426945,
 			"created": 1486780678114,
 			"url": "{{ base_url }}/v2/entities/Room1",
 			"name": "several-entity-attributes",
@@ -783,7 +867,7 @@
 		{
 			"_id": "req_5149ee0002974551bbcb419dc8fb707b",
 			"parentId": "fld_a074d17154264ec7bdacd0211fea1f1b",
-			"modified": 1486953402349,
+			"modified": 1486955426942,
 			"created": 1486930441698,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "query-no-results",
@@ -810,7 +894,7 @@
 		{
 			"_id": "req_b4915fe829cd42b6911d0275c2b8b004",
 			"parentId": "fld_a074d17154264ec7bdacd0211fea1f1b",
-			"modified": 1486953396585,
+			"modified": 1486955426938,
 			"created": 1486929172072,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "query-by-distance-to-a-certain-point",
@@ -853,7 +937,7 @@
 		{
 			"_id": "req_ebd16fa485c949c6843bea6a13bc90a3",
 			"parentId": "fld_a074d17154264ec7bdacd0211fea1f1b",
-			"modified": 1486953389163,
+			"modified": 1486955426886,
 			"created": 1486780751706,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "query-by-attribute-content",
@@ -892,7 +976,7 @@
 		{
 			"_id": "req_13e0a9348821427e8c7c7cadf65953dd",
 			"parentId": "fld_03a463120bba4848901882fae04aeaf2",
-			"modified": 1486953460137,
+			"modified": 1486955426864,
 			"created": 1486936545489,
 			"url": "{{ base_url }}/v2/entities/Room2/attrs",
 			"name": "list-all-keyValue-mode",
@@ -919,7 +1003,7 @@
 		{
 			"_id": "req_613fc1b92011461b976f04990f9b6275",
 			"parentId": "fld_03a463120bba4848901882fae04aeaf2",
-			"modified": 1486954255571,
+			"modified": 1486955426644,
 			"created": 1486936908218,
 			"url": "{{ base_url }}/v2/entities/Room3/attrs",
 			"name": "replace-all-keyValue-mode",
@@ -947,7 +1031,7 @@
 		{
 			"_id": "req_f48d46c815c74f7d8a1097dfda518a77",
 			"parentId": "fld_03a463120bba4848901882fae04aeaf2",
-			"modified": 1486954222343,
+			"modified": 1486955426331,
 			"created": 1486936303745,
 			"url": "{{ base_url }}/v2/entities/Room1/attrs",
 			"name": "list-all-normalized-mode",
@@ -969,7 +1053,7 @@
 		{
 			"_id": "req_a2d35905f29d48bb9728d9425cdb9fc1",
 			"parentId": "fld_1f46fdf5b9684d2486df80db115d0843",
-			"modified": 1486953491113,
+			"modified": 1486955426329,
 			"created": 1486937625637,
 			"url": "{{ base_url }}/v2/entities/Room2/attrs/temperature",
 			"name": "remove",
@@ -997,7 +1081,7 @@
 		{
 			"_id": "req_b498e7c363f7425db4c1d2c10f1d2f51",
 			"parentId": "fld_1f46fdf5b9684d2486df80db115d0843",
-			"modified": 1486953478721,
+			"modified": 1486955426328,
 			"created": 1486937497583,
 			"url": "{{ base_url }}/v2/entities/Room2/attrs/noexiste",
 			"name": "get-not-exist",
@@ -1019,7 +1103,7 @@
 		{
 			"_id": "req_e996a65ec58947e092417da2a927f30d",
 			"parentId": "fld_1f46fdf5b9684d2486df80db115d0843",
-			"modified": 1486953484869,
+			"modified": 1486955426326,
 			"created": 1486937554295,
 			"url": "{{ base_url }}/v2/entities/Room2/attrs/temperature",
 			"name": "update",
@@ -1047,7 +1131,7 @@
 		{
 			"_id": "req_ff7f6826c585479a81878b6c778a99f7",
 			"parentId": "fld_1f46fdf5b9684d2486df80db115d0843",
-			"modified": 1486953473290,
+			"modified": 1486955426324,
 			"created": 1486937339214,
 			"url": "{{ base_url }}/v2/entities/Room2/attrs/temperature",
 			"name": "get",
@@ -1069,7 +1153,7 @@
 		{
 			"_id": "req_15340216048e4d85ac267e4992268305",
 			"parentId": "fld_ce71fb4bea124e269e705ade5646df2b",
-			"modified": 1486953517509,
+			"modified": 1486955426320,
 			"created": 1486937714497,
 			"url": "{{ base_url }}/v2/entities/Room3/attrs/pressure",
 			"name": "update-as-json",
@@ -1097,7 +1181,7 @@
 		{
 			"_id": "req_3d5994488358430bb91c93385e1d52cd",
 			"parentId": "fld_ce71fb4bea124e269e705ade5646df2b",
-			"modified": 1486953510770,
+			"modified": 1486955426318,
 			"created": 1486937714526,
 			"url": "{{ base_url }}/v2/entities/Room3/attrs/temperature/value",
 			"name": "update-as-text",
@@ -1125,7 +1209,7 @@
 		{
 			"_id": "req_9064cbcb36304a9dacf00954ec7dcdb6",
 			"parentId": "fld_ce71fb4bea124e269e705ade5646df2b",
-			"modified": 1486953504685,
+			"modified": 1486955426316,
 			"created": 1486937714512,
 			"url": "{{ base_url }}/v2/entities/Room3/attrs/temperature",
 			"name": "get-as-json",
@@ -1147,7 +1231,7 @@
 		{
 			"_id": "req_e8987cdc2350484488bf8a8fba2fd7b9",
 			"parentId": "fld_ce71fb4bea124e269e705ade5646df2b",
-			"modified": 1486953498293,
+			"modified": 1486955426314,
 			"created": 1486937714537,
 			"url": "{{ base_url }}/v2/entities/Room3/attrs/pressure/value",
 			"name": "get-as-text",
@@ -1169,7 +1253,7 @@
 		{
 			"_id": "req_3c3d3ac19ffc41c6b8328092691ff3b2",
 			"parentId": "fld_1c8479b7e9ba46c19da1a0e4222bc4ce",
-			"modified": 1486953434622,
+			"modified": 1486955426312,
 			"created": 1486935603331,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "creation-error.-already-exists",
@@ -1197,7 +1281,7 @@
 		{
 			"_id": "req_7fd5c61a0a9743619860e8e5edb487d1",
 			"parentId": "fld_1c8479b7e9ba46c19da1a0e4222bc4ce",
-			"modified": 1486954103114,
+			"modified": 1486955426310,
 			"created": 1486931149371,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "normalized-mode",
@@ -1225,7 +1309,7 @@
 		{
 			"_id": "req_8d2afd29d1374085bcb0ddae47ba5304",
 			"parentId": "fld_1c8479b7e9ba46c19da1a0e4222bc4ce",
-			"modified": 1486954158282,
+			"modified": 1486955426307,
 			"created": 1486935216491,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "georeferencing-using-simple-location-format",
@@ -1253,7 +1337,7 @@
 		{
 			"_id": "req_a1a856f57d564c729e536d6df874170c",
 			"parentId": "fld_1c8479b7e9ba46c19da1a0e4222bc4ce",
-			"modified": 1486954148185,
+			"modified": 1486955426305,
 			"created": 1486931163342,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "keyValues-mode",
@@ -1281,7 +1365,7 @@
 		{
 			"_id": "req_d6533a95898c496a967a85150ad1da59",
 			"parentId": "fld_1c8479b7e9ba46c19da1a0e4222bc4ce",
-			"modified": 1486954167998,
+			"modified": 1486955426303,
 			"created": 1486935458039,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "georeferencing-using-geojson",
@@ -1309,7 +1393,7 @@
 		{
 			"_id": "req_a6a197ddd07c438d9a7a88c8046000e0",
 			"parentId": "fld_69c7c6a3285e4848a70c7e89c2370644",
-			"modified": 1486954201997,
+			"modified": 1486955426300,
 			"created": 1486935743458,
 			"url": "{{ base_url }}/v2/entities/Room2",
 			"name": "by-id",
@@ -1331,7 +1415,7 @@
 		{
 			"_id": "req_22c1b0f1a8cd4ce0ab4633b52bfe933b",
 			"parentId": "fld_0c31f1b6080441dcb73df9c4d3429059",
-			"modified": 1486953199871,
+			"modified": 1486955426294,
 			"created": 1486777395950,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "normalized-mode",
@@ -1348,7 +1432,7 @@
 		{
 			"_id": "req_40dc8d90a7e046fb8ce66f0ed9df5f53",
 			"parentId": "fld_0c31f1b6080441dcb73df9c4d3429059",
-			"modified": 1486953208189,
+			"modified": 1486955426292,
 			"created": 1486777399015,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "key-values-mode",
@@ -1370,7 +1454,7 @@
 		{
 			"_id": "req_e199257d0fd64f81b9116dd63be3e47b",
 			"parentId": "fld_0c31f1b6080441dcb73df9c4d3429059",
-			"modified": 1486953215569,
+			"modified": 1486955426290,
 			"created": 1486777654700,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "pagination",
@@ -1400,7 +1484,7 @@
 		{
 			"_id": "req_140473542f4e4f0a95316d7a8090dd0c",
 			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
-			"modified": 1486953238223,
+			"modified": 1486955426288,
 			"created": 1486778641292,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "by-id-list",
@@ -1426,7 +1510,7 @@
 		{
 			"_id": "req_1605a70c44b343eaa65fa4587490ac28",
 			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
-			"modified": 1486953245476,
+			"modified": 1486955426284,
 			"created": 1486778656592,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "by-type-list",
@@ -1448,7 +1532,7 @@
 		{
 			"_id": "req_4a9de804fa80400dbd659f0e114ac89f",
 			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
-			"modified": 1486953811956,
+			"modified": 1486955426282,
 			"created": 1486778616409,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "by-type",
@@ -1470,7 +1554,7 @@
 		{
 			"_id": "req_b68cb7f974fd490a88530c9904489a1f",
 			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
-			"modified": 1486953891536,
+			"modified": 1486955426278,
 			"created": 1486778670932,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "by-pattern-matching",
@@ -1496,7 +1580,7 @@
 		{
 			"_id": "req_ce198338a41941bf9b5a371db5a859e9",
 			"parentId": "fld_5065860481984e9a953f8b543e6958e9",
-			"modified": 1486953786816,
+			"modified": 1486955426250,
 			"created": 1486778196079,
 			"url": "{{ base_url }}/v2/entities",
 			"name": "by-id",
