@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-13T06:49:54.309Z",
+	"__export_date": "2017-02-14T08:06:27.713Z",
 	"__export_source": "insomnia.desktop.app:v4.2.11",
 	"resources": [
 		{
@@ -630,7 +630,7 @@
 		{
 			"_id": "req_8959fda2029f44e8ad1d1717d363e1f4",
 			"parentId": "fld_a83a8460ffc74d78a5da7c92a63db932",
-			"modified": 1486955427243,
+			"modified": 1487052334023,
 			"created": 1486943578282,
 			"url": "{{ base_url }}/v2/subscriptions",
 			"name": "create-subscription",
@@ -695,6 +695,29 @@
 			"headers": [],
 			"authentication": {},
 			"metaSortKey": -1486943131783,
+			"_type": "request"
+		},
+		{
+			"_id": "req_dbd565d7e3b84ba9bee474d9699137d2",
+			"parentId": "fld_a83a8460ffc74d78a5da7c92a63db932",
+			"modified": 1487052582768,
+			"created": 1487052525886,
+			"url": "{{ base_url }}/v2/subscriptions",
+			"name": "create-subscription-with-condition",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"description\": \"Update temperature\",\n\t\"subject\": {\n\t\t\"entities\": [\n\t\t\t{\n\t\t\t\t\"id\": \"Room3\",\n\t\t\t\t\"type\": \"Room\"\n\t\t\t}\n\t\t],\n\t\t\"condition\": {\n\t\t\t\"attrs\": [\n\t\t\t\t\"temperature\"\n\t\t\t]\n\t\t},\n\t\t\"expression\": {\n\t\t\t\"q\": \"temperature>40\"\n\t\t}\n\t},\n\t\"notification\": {\n\t\t\"http\": {\n\t\t\t\"url\": \"http://192.168.83.2:8080/notifications\"\n\t\t},\n\t\t\"attrs\": [\n\t\t\t\"temperature\"\n\t\t]\n\t},\n\t\"expires\": \"2020-04-05T14:00:00.00Z\",\n\t\"throttling\": 5\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486943131779,
 			"_type": "request"
 		},
 		{
