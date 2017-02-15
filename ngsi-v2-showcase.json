@@ -1,13 +1,13 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-14T08:06:57.897Z",
+	"__export_date": "2017-02-15T03:13:09.626Z",
 	"__export_source": "insomnia.desktop.app:v4.2.11",
 	"resources": [
 		{
 			"_id": "wrk_daae2d648f824923abdaaf8c8da8fb09",
 			"parentId": null,
-			"modified": 1487048773294,
+			"modified": 1487000789540,
 			"created": 1486952494949,
 			"name": "NGSI V2 showcase",
 			"description": "",
@@ -17,7 +17,7 @@
 		{
 			"_id": "env_d7999f80cffd4794b9d3b8f8c75971df",
 			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
-			"modified": 1487048773293,
+			"modified": 1487000789540,
 			"created": 1486952507055,
 			"name": "Base Environment",
 			"data": {
@@ -28,7 +28,7 @@
 		{
 			"_id": "jar_4aab2e55427540faa76ac020f6454356",
 			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
-			"modified": 1487048773291,
+			"modified": 1487000789539,
 			"created": 1486953028181,
 			"name": "Default Jar",
 			"cookies": [],
@@ -37,7 +37,7 @@
 		{
 			"_id": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
 			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
-			"modified": 1487048773290,
+			"modified": 1487000789539,
 			"created": 1486956181337,
 			"name": "entities",
 			"environment": {},
@@ -47,7 +47,7 @@
 		{
 			"_id": "fld_14ad64eb3426497d878cf767ac133b1a",
 			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
-			"modified": 1487048773289,
+			"modified": 1487001235791,
 			"created": 1487000800190,
 			"name": "geolocation",
 			"environment": {},
@@ -57,7 +57,7 @@
 		{
 			"_id": "fld_47828252f50c438999eed82844735565",
 			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
-			"modified": 1487048773288,
+			"modified": 1487000789538,
 			"created": 1486964178157,
 			"name": "subscriptions",
 			"environment": {},
@@ -67,7 +67,7 @@
 		{
 			"_id": "fld_9a412dce4c024c4181c9ec2e3ae17381",
 			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
-			"modified": 1487048773288,
+			"modified": 1487000789537,
 			"created": 1486955629398,
 			"name": "retrieve-api-resources",
 			"environment": {},
@@ -77,7 +77,7 @@
 		{
 			"_id": "fld_c7263e9fbabc492ab6c908e3d2b0f9e7",
 			"parentId": "wrk_daae2d648f824923abdaaf8c8da8fb09",
-			"modified": 1487048773287,
+			"modified": 1487000789537,
 			"created": 1486960988646,
 			"name": "attributes",
 			"environment": {},
@@ -87,7 +87,7 @@
 		{
 			"_id": "env_009ebadc5bc0471f9625b338f01a8730",
 			"parentId": "env_d7999f80cffd4794b9d3b8f8c75971df",
-			"modified": 1487048773286,
+			"modified": 1487000789536,
 			"created": 1486952790962,
 			"name": "development",
 			"data": {
@@ -98,7 +98,7 @@
 		{
 			"_id": "env_f411a5b389d14713b4bbcb0852198421",
 			"parentId": "env_d7999f80cffd4794b9d3b8f8c75971df",
-			"modified": 1487048773284,
+			"modified": 1487000789535,
 			"created": 1486952798569,
 			"name": "production",
 			"data": {
@@ -109,14 +109,14 @@
 		{
 			"_id": "req_54771f46899c4887ba58cb8a28756625",
 			"parentId": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
-			"modified": 1487051125194,
+			"modified": 1487000789534,
 			"created": 1486960902972,
 			"url": "{{base_url}}/v2/entities",
 			"name": "create-entity",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"type\": \"Room\",\n\t\"id\": \"Bcn-Welt-10\",\n\t\"temperature\": {\n\t\t\"value\": 21.8\n\t},\n\t\"humidity\": {\n\t\t\"value\": 60\n\t},\n\t\"location\": {\n\t\t\"type\": \"StructuredValue\",\n\t\t\"value\": {\n\t\t\t\"value\": \"41.3763726, 2.1864475\",\n\t\t\t\"type\": \"geo:point\",\n\t\t\t\"metadata\": {\n\t\t\t\t\"crs\": {\n\t\t\t\t\t\"value\": \"WGS84\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"otro\": {\n\t\t\t\t\"name\": \"otra\",\n\t\t\t\t\"prop\": \"propiedad\"\n\t\t\t}\n\t\t},\n\t\t\"metadata\": {}\n\t},\n\t\"otro\": {\n\t\t\"value\": \"propiedad\",\n\t\t\"type\": \"Text\"\n\t}\n}"
+				"text": "{\n\t\"type\": \"Room\",\n\t\"id\": \"Bcn-Welt-10\",\n\t\"temperature\": {\n\t\t\"value\": 21.7\n\t},\n\t\"humidity\": {\n\t\t\"value\": 60\n\t},\n\t\"location\": {\n\t\t\"type\": \"StructuredValue\",\n\t\t\"value\": {\n\t\t\t\"value\": \"41.3763726, 2.1864475\",\n\t\t\t\"type\": \"geo:point\",\n\t\t\t\"metadata\": {\n\t\t\t\t\"crs\": {\n\t\t\t\t\t\"value\": \"WGS84\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"otro\": {\n\t\t\t\t\"name\": \"otra\",\n\t\t\t\t\"prop\": \"propiedad\"\n\t\t\t}\n\t\t},\n\t\t\"metadata\": {}\n\t},\n\t\"otro\": {\n\t\t\"value\": \"propiedad\",\n\t\t\"type\": \"Text\"\n\t}\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -136,14 +136,14 @@
 		{
 			"_id": "req_8be7c43e9ffc4558990072be3d78db60",
 			"parentId": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
-			"modified": 1487051624058,
+			"modified": 1487000789533,
 			"created": 1486964594924,
 			"url": "{{base_url}}/v2/entities/Bcn-Welt-10/attrs",
 			"name": "create-update-entity",
 			"method": "PUT",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\n\t\"temperature\": {\n\t\t\"value\": 21.2\n\t},\n\t\"humidity\": {\n\t\t\"value\": 61\n\t},\n\t\"location\": {\n\t\t\"type\": \"StructuredValue\",\n\t\t\"value\": {\n\t\t\t\"value\": \"41.3763726, 2.1864475\",\n\t\t\t\"type\": \"geo:point\",\n\t\t\t\"metadata\": {\n\t\t\t\t\"crs\": {\n\t\t\t\t\t\"value\": \"WGS84\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"otro\": {\n\t\t\t\t\"name\": \"otra\",\n\t\t\t\t\"prop\": \"propiedad\"\n\t\t\t}\n\t\t},\n\t\t\"metadata\": {}\n\t},\n\t\"otro\": {\n\t\t\"value\": \"propiedad\",\n\t\t\"type\": \"Text\"\n\t}\n}"
+				"text": "{\n\n\t\"temperature\": {\n\t\t\"value\": 21.7\n\t},\n\t\"humidity\": {\n\t\t\"value\": 60\n\t},\n\t\"location\": {\n\t\t\"type\": \"StructuredValue\",\n\t\t\"value\": {\n\t\t\t\"value\": \"41.3763726, 2.1864475\",\n\t\t\t\"type\": \"geo:point\",\n\t\t\t\"metadata\": {\n\t\t\t\t\"crs\": {\n\t\t\t\t\t\"value\": \"WGS84\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"otro\": {\n\t\t\t\t\"name\": \"otra\",\n\t\t\t\t\"prop\": \"propiedad\"\n\t\t\t}\n\t\t},\n\t\t\"metadata\": {}\n\t},\n\t\"otro\": {\n\t\t\"value\": \"propiedad\",\n\t\t\"type\": \"Text\"\n\t}\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -163,7 +163,7 @@
 		{
 			"_id": "req_9aa16bf28f824f12bd6f68973fe6632a",
 			"parentId": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
-			"modified": 1487048773280,
+			"modified": 1487001358666,
 			"created": 1486956181358,
 			"url": "{{base_url}}/v2/entities",
 			"name": "list-entities",
@@ -180,7 +180,7 @@
 		{
 			"_id": "req_c50edddf141f484a8f16d0fb54c5a4e9",
 			"parentId": "fld_0d5b7d4fe9b449c3bb85ac5b56741253",
-			"modified": 1487048773279,
+			"modified": 1487000789532,
 			"created": 1486960988675,
 			"url": "{{base_url}}/v2/entities/Bcn-Welt-10",
 			"name": "entity-by-id",
@@ -202,7 +202,7 @@
 		{
 			"_id": "req_0f58cc66b5964fa6b00df4f367c81a88",
 			"parentId": "fld_14ad64eb3426497d878cf767ac133b1a",
-			"modified": 1487048773279,
+			"modified": 1487017725874,
 			"created": 1487017618008,
 			"url": "{{base_url}}/v2/entities/Stadium-MX-1/",
 			"name": "get-by-id",
@@ -224,7 +224,7 @@
 		{
 			"_id": "req_1227c712f5d544909a418e3917f8a2ff",
 			"parentId": "fld_14ad64eb3426497d878cf767ac133b1a",
-			"modified": 1487048773278,
+			"modified": 1487018176379,
 			"created": 1487017741533,
 			"url": "{{base_url}}/v2/entities/Stadium-MX-1/attrs",
 			"name": "update-by-id",
@@ -252,7 +252,7 @@
 		{
 			"_id": "req_1228955085e144d88e224f72385777dc",
 			"parentId": "fld_14ad64eb3426497d878cf767ac133b1a",
-			"modified": 1487048773277,
+			"modified": 1487013575102,
 			"created": 1487000800210,
 			"url": "{{base_url}}/v2/op/update",
 			"name": "batch-operations",
@@ -275,7 +275,7 @@
 		{
 			"_id": "req_17dc229f6721433291a744bd4314025b",
 			"parentId": "fld_14ad64eb3426497d878cf767ac133b1a",
-			"modified": 1487048773276,
+			"modified": 1487018100200,
 			"created": 1487005442030,
 			"url": "{{base_url}}/v2/entities",
 			"name": "get-all-entities",
@@ -292,14 +292,14 @@
 		{
 			"_id": "req_23fe50a6dae243ec8e1257697e6036f7",
 			"parentId": "fld_14ad64eb3426497d878cf767ac133b1a",
-			"modified": 1487048773275,
+			"modified": 1487115249056,
 			"created": 1487003747149,
 			"url": "{{base_url}}/v2/entities",
 			"name": "create-poi",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"id\": \"Stadium-MX-1\",\n\t\"type\": \"PointOfInterest\",\n\t\"category\": {\n\t\t\"type\": \"Text\",\n\t\t\"value\": \"Stadium\",\n\t\t\"metadata\": {}\n\t},\n\t\"location\": {\n\t\t\"type\": \"geo:point\",\n\t\t\"value\": \"19.332318,-99.192218\",\n\t\t\"metadata\": {}\n\t},\n\t\"name\": {\n\t\t\"type\": \"Text\",\n\t\t\"value\": \"Ciudad Universitaria\",\n\t\t\"metadata\": {}\n\t},\n\t\"postalAddress\": {\n\t\t\"type\": \"StructuredValue\",\n\t\t\"value\": {\n\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t}\n\t},\n\t\"source\": {\n\t\t\"type\": \"Text\",\n\t\t\"value\": \"http://www.dgsg.unam.mx/estadio.htm\",\n\t\t\"metadata\": {}\n\t}\n}"
+				"text": "{\n\t\"id\": \"Stadium-loc2-MX-1\",\n\t\"type\": \"PointOfInterest\",\n\t\"category\": {\n\t\t\"type\": \"Text\",\n\t\t\"value\": \"Stadium\",\n\t\t\"metadata\": {}\n\t},\n\t\"location\": {\n\t\t\"type\": \"geo:point\",\n\t\t\"value\": \"19.332318,-99.192218\",\n\t\t\"metadata\": {}\n\t},\n\t\"name\": {\n\t\t\"type\": \"Text\",\n\t\t\"value\": \"Ciudad Universitaria\",\n\t\t\"metadata\": {}\n\t},\n\t\"postalAddress\": {\n\t\t\"type\": \"StructuredValue\",\n\t\t\"value\": {\n\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t}\n\t},\n\t\"source\": {\n\t\t\"type\": \"Text\",\n\t\t\"value\": \"http://www.dgsg.unam.mx/estadio.htm\",\n\t\t\"metadata\": {}\n\t}\n}"
 			},
 			"parameters": [
 				{
@@ -318,16 +318,70 @@
 			"_type": "request"
 		},
 		{
+			"_id": "req_2a94499ce3014cda9cfb80dc56804e1a",
+			"parentId": "fld_14ad64eb3426497d878cf767ac133b1a",
+			"modified": 1487127778758,
+			"created": 1487127621537,
+			"url": "{{base_url}}/v2/op/update",
+			"name": "create-in-batch-example-points",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"actionType\": \"APPEND\",\n\t\"entities\": [\n\t\t{\n\t\t\t\"id\": \"Point\",\n\t\t\t\"type\": \"Point\",\n\t\t\t\"name\": \"A\",\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"3,2\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Point\",\n\t\t\t\"type\": \"Point\",\n\t\t\t\"name\": \"B\",\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"5,5\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Point\",\n\t\t\t\"type\": \"Point\",\n\t\t\t\"name\": \"B\",\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.435433, -99.133072\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t}\n\t]\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Accept",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486964191005,
+			"_type": "request"
+		},
+		{
+			"_id": "req_4fffe4f27fef4a3ca631fda5c5244fda",
+			"parentId": "fld_14ad64eb3426497d878cf767ac133b1a",
+			"modified": 1487127110943,
+			"created": 1487127014915,
+			"url": "{{base_url}}/v2/op/update",
+			"name": "create-in-batch-example",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"actionType\": \"APPEND\",\n\t\"entities\": [\n\t\t{\n\t\t\t\"id\": \"Church-MX-1\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Church\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.435433, -99.133072\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Catedral Metropolitana\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.arquidiocesismexico.org.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Church-MX-2\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Church\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.431768, -99.122984\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Iglesia de la Santa Cruz y la Soledad\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.guiadelcentrohistorico.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Church-MX-3\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Church\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.433383, -99.126838\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Iglesia de la Santísima Trinidad\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.guiadelcentrohistorico.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Church-MX-4\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Church\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.431122, -99.133812\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Iglesia de San Bernardo\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.guiadelcentrohistorico.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Church-MX-5\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Church\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.429847, -99.136494\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Templo de San Agustin\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.guiadelcentrohistorico.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Building-MX-1\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Building\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.436971, -99.130840\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Antiguo colegio de San Ildefonso\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.sanildefonso.org.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Building-MX-2\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Building\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.432842, -99.131173\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Palacio Nacional\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.hacienda.gob.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Building-MX-3\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Building\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.435513, -99.141194\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Palacio de Bellas Artes\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.palacio.bellasartes.gob.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Building-MX-4\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Building\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.435817, -99.139520\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Palacio de Minería\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.mineria.unam.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Building-MX-5\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Building\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.434144, -99.140686\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Torre Latinoamericana\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.guiadelcentrohistorico.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Museum-MX-1\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museum\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.434684, -99.131891\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museo del Templo Mayor\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.templomayor.inah.gob.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Museum-MX-2\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museum\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.436890, -99.129252\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museo de las Constituciones\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.unam.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Museum-MX-3\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museum\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.437497, -99.143114\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museo Franz Mayer\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.franzmayer.org.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Museum-MX-4\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museum\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.435696, -99.141269\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museo Nacional de Arquitectura\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.palacio.bellasartes.gob.mx\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\": \"Museum-MX-5\",\n\t\t\t\"type\": \"PointOfInterest\",\n\t\t\t\"category\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museum\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"location\": {\n\t\t\t\t\"type\": \"geo:point\",\n\t\t\t\t\"value\": \"19.433531, -99.136184\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"name\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"Museo del Estanquillo\",\n\t\t\t\t\"metadata\": {}\n\t\t\t},\n\t\t\t\"postalAddress\": {\n\t\t\t\t\"type\": \"StructuredValue\",\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"addressCountry\": \"MX\",\n\t\t\t\t\t\"addressLocality\": \"México Ciudad de México\",\n\t\t\t\t\t\"addressRegion\": \"Ciudad de México\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"source\": {\n\t\t\t\t\"type\": \"Text\",\n\t\t\t\t\"value\": \"http://www.museodelestanquillo.com\",\n\t\t\t\t\"metadata\": {}\n\t\t\t}\n\t\t}\n\t]\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Accept",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1486964191006,
+			"_type": "request"
+		},
+		{
 			"_id": "req_bcb3d69002324e18860ffef80b939391",
 			"parentId": "fld_14ad64eb3426497d878cf767ac133b1a",
-			"modified": 1487048773274,
+			"modified": 1487127615024,
 			"created": 1487006046545,
 			"url": "{{base_url}}/v1/queryContext",
 			"name": "query-geolocation",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n    \"entities\": [\n        {\n            \"type\": \"PointOfInterest\",\n            \"isPattern\": \"true\",\n            \"id\": \".*\"\n        }\n    ],\n    \"restriction\": {\n        \"scopes\": [\n            {\n                \"type\": \"FIWARE::Location\",\n                \"value\": {\n                    \"circle\": {\n                        \"centerLatitude\": \"19.364549\",\n                        \"centerLongitude\": \"-99.181673\",\n                        \"radius\": \"50000\"\n                    }\n                }\n            }\n        ]\n    }\n}"
+				"text": "{\n    \"entities\": [\n        {\n            \"type\": \"PointOfInterest\",\n            \"isPattern\": \"true\",\n            \"id\": \".*\"\n        }\n    ],\n    \"restriction\": {\n        \"scopes\": [\n            {\n                \"type\": \"FIWARE::Location\",\n                \"value\": {\n                    \"circle\": {\n                        \"centerLatitude\": \"19.364549\",\n                        \"centerLongitude\": \"-99.181673\",\n                        \"radius\": \"100\"\n                    }\n                }\n            }\n        ]\n    }\n}"
 			},
 			"parameters": [
 				{
@@ -352,7 +406,7 @@
 		{
 			"_id": "req_edd32fb5b4f54c26a7b5c8101510787a",
 			"parentId": "fld_14ad64eb3426497d878cf767ac133b1a",
-			"modified": 1487048773273,
+			"modified": 1487017991183,
 			"created": 1487012287987,
 			"url": "{{base_url}}/v2/op/update",
 			"name": "create-in-batch",
@@ -377,32 +431,9 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_52f0ae1bc67a4e719974dd8e738b804b",
-			"parentId": "fld_47828252f50c438999eed82844735565",
-			"modified": 1487051388018,
-			"created": 1487050724548,
-			"url": "{{base_url}}/v1/subscribeContext",
-			"name": "cygnus-notification",
-			"method": "POST",
-			"body": {
-				"mimeType": "application/json",
-				"text": "{\n  \"entities\": [\n    {\n      \"type\": \"Room\",\n      \"isPattern\": \"false\",\n      \"id\": \".*\"\n    }\n  ],\n  \"attributes\": [\n    \"temperature\",\n    \"humidity\"\n  ],\n  \"reference\": \"http://orion.fiware.infotece.mx:5050/notify\",\n  \"duration\": \"P1M\",\n  \"notifyConditions\": [\n    {\n      \"type\": \"ONCHANGE\",\n      \"condValues\": [\n        \"temperature\"\n      ]\n    }\n  ],\n  \"throttling\": \"PT1S\"\n}"
-			},
-			"parameters": [],
-			"headers": [
-				{
-					"name": "Content-Type",
-					"value": "application/json"
-				}
-			],
-			"authentication": {},
-			"metaSortKey": -1486964191010,
-			"_type": "request"
-		},
-		{
 			"_id": "req_dd6c105b0f6a481b98058941da7e25d3",
 			"parentId": "fld_47828252f50c438999eed82844735565",
-			"modified": 1487048773271,
+			"modified": 1487000789531,
 			"created": 1486964191011,
 			"url": "{{base_url}}/v2/subscriptions",
 			"name": "custom-notification",
@@ -425,7 +456,7 @@
 		{
 			"_id": "req_a6310f58d9294f35919ff6263ff97640",
 			"parentId": "fld_9a412dce4c024c4181c9ec2e3ae17381",
-			"modified": 1487048773270,
+			"modified": 1487000789530,
 			"created": 1486953006962,
 			"url": "{{base_url}}/v2",
 			"name": "get-resources",
@@ -442,7 +473,7 @@
 		{
 			"_id": "req_c7332d2c7b9549dfa57f0df2849647c2",
 			"parentId": "fld_c7263e9fbabc492ab6c908e3d2b0f9e7",
-			"modified": 1487048773259,
+			"modified": 1487000789522,
 			"created": 1486961622045,
 			"url": "{{base_url}}/v2/entities/entityId",
 			"name": "attribute-by-entity-id",
