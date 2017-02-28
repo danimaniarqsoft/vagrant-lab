@@ -26,3 +26,11 @@ sudo pip install backports.ssl_match_hostname --upgrade
 sudo pip install docker-compose
 sudo yum -y upgrade python*
 
+# install git
+
+sudo yum -y install git
+
+# install nc and bc
+
+sudo yum -y install nc
+sudo yum -y install bc 
