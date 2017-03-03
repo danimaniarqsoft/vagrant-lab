@@ -72,7 +72,7 @@ password: blanca.vazquez
 
 #### Orion Context Broker Subscription Example:
 
-In this example the assigned IP was `172.17.0.1` so, the subscription payload could be:
+In this example the assigned IP was `172.17.0.1` so the subscription payload could be:
 
 ```javascript
 {
