@@ -34,7 +34,7 @@ the output in the shell is something like the next output:
        valid_lft forever preferred_lft forever
 ```
 
-Here we have three network interface. In order to subscribe to the orion context broker we are going to use the network interface number two `eth0` with the ip´10.0.2.15´.
+Here we have three network interface. In order to subscribe to the orion context broker we are going to use the last network interface `docker0` with the assigned ip `172.17.0.1`.
 
 #### Getting up the Orion Context Broker
 
@@ -70,4 +70,42 @@ username: blanca.vazquez
 password: blanca.vazquez
 ```
 
+#### Orion Context Broker Subscription Example:
+
+In this example the assigned IP was `172.17.0.1` so, the subscription payload could be:
+
+```javascript
+{
+	"description": "Update average rating",
+	"subject": {
+		"entities": [
+			{
+				"id": "Station1",
+				"type": "EstacionMonitoreoContaminantes"
+			}
+		],
+		"condition": {
+			"attrs": [
+				"o3"
+			]
+		}
+	},
+	"notification": {
+		"http": {
+			"url": "http://172.17.0.1:8080/notifications",
+			"method": "POST"
+		},
+		"attrsFormat": "keyValues",
+		"attrs": [
+			"id",
+			"nombre",
+			"o3",
+			"latitud",
+			"longitud"
+		]
+	},
+	"expires": "2020-04-05T14:00:00.00Z",
+	"throttling": 1
+}
+```
 Great!
