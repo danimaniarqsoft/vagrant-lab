@@ -34,3 +34,9 @@ sudo yum -y install git
 
 sudo yum -y install nc
 sudo yum -y install bc 
+
+# Por bug de vagrant se forza el inicio de la interface de red
+[ $(ifconfig eth1 | grep inet | wc -l) = 0 ] && ifup eth1
+sudo chmod +x /etc/rc.d/rc.local
+sudo echo "[ $(ifconfig eth1 | grep inet | wc -l) = 0 ]" >> /etc/rc.d/rc.local
+
