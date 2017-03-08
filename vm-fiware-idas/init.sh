@@ -10,8 +10,9 @@ printf "\n" >> /home/vagrant/.bashrc
 
 sudo yum -y check-update
 sudo yum -y install vim
+sudo yum -y install emacs-nox git nmap net-tools
 curl -fsSL https://get.docker.com/ | sh
-curl https://gist.githubusercontent.com/danimaniarqsoft/177b6c8cb579f0cac87b8d13d74e886c/raw/cdbdd584defb996b570ec068388405ec2f017741/docker-compose.yml > docker-compose.yml
+curl https://gist.githubusercontent.com/danimaniarqsoft/177b6c8cb579f0cac87b8d13d74e886c/raw/3293a2fe5df6d4d67acf072277229fe08f868445/docker-compose-idas.yml -> docker-compose.yml
 sudo systemctl start docker
 sudo systemctl status docker
 sudo systemctl enable docker
