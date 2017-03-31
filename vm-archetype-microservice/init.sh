@@ -62,3 +62,20 @@ sudo systemctl enable tomcat
 # Access to http://[domain]:8080
 # ej. http://localhost:8080
 # ej. http://2007.249.80.34:8080
+
+# Install Apache Server
+
+sudo yum -y install httpd
+sudo systemctl start httpd.service
+sudo systemctl enable httpd.service
+
+
+
+# Tools
+
+## htop
+
+sudo yum -y install epel-release
+sudo yum -y install htop
+
+## 
