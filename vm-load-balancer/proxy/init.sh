@@ -15,8 +15,18 @@ sudo curl -o /etc/httpd/conf.d/default-site.conf https://gist.githubusercontent.
 sudo systemctl start httpd.service
 sudo systemctl enable httpd.service
 
-## htop
+# Monitoring
+
+## Process - htop
 
 sudo yum -y install epel-release
 sudo yum -y install htop
 
+## Linux Disk I/O Activity and Usage Per-Process Basis
+
+sudo yum -y install iotop
+
+## Bandwidth
+
+sudo yum -y install nethogs
+sudo yum -y install nload
