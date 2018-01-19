@@ -1,22 +1,22 @@
 
 
-´´´sh
+```sh
 hostname
-´´´
+```
 
-´´´sh
+```sh
 uname -a
-´´´
+```
 
-´´´sh
+```sh
 id
-´´´
+```
 
-´´´sh
+```sh
 wich java
 ## or
 type java
-´´´
+```
 
 
 
