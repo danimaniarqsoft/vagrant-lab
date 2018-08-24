@@ -7,7 +7,7 @@ printf "\n" >> /home/vagrant/.bashrc
 sudo yum clean all
 sudo yum -y update
 
-#Downloading configuration files for java, maven, and mongodb
+#Downloading configuration files for java, maven
 
 curl https://gist.githubusercontent.com/danimaniarqsoft/177b6c8cb579f0cac87b8d13d74e886c/raw/619c9e672496cddab49e92f44765a295b488ffb0/maven.sh > maven.sh
 curl https://gist.githubusercontent.com/danimaniarqsoft/177b6c8cb579f0cac87b8d13d74e886c/raw/619c9e672496cddab49e92f44765a295b488ffb0/java.sh > java.sh
@@ -38,26 +38,22 @@ source /etc/profile.d/java.csh
 ## Install Git
 sudo yum -y install git
 
+# Install NGINX
+sudo yum -y install epel-release
+sudo yum -y install nginx
+sudo systemctl start nginx
 
-## Install Tomcat
+# Firawall Configuration
 
+sudo firewall-cmd --permanent --zone=public --add-service=http 
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
 
-
-# Access to http://[domain]:8080
-# ej. http://localhost:8080
-# ej. http://2007.249.80.34:8080
-
-# Install Apache Server
-
-sudo yum -y install httpd
-sudo systemctl start httpd.service
-sudo systemctl enable httpd.service
 
 # Tools
 
 ## htop
 
-sudo yum -y install epel-release
 sudo yum -y install htop
 
 ## 
