@@ -7,12 +7,13 @@
 # sudo apt-get update
 # sudo apt-get install -y oracle-java8-installer
 
+# Install Java
 
+sudo apt-get install -y python-software-properties debconf-utils
 sudo add-apt-repository -y ppa:webupd8team/java
-# sudo apt update; sudo apt install oracle-java8-installer
-
-
-
+sudo apt-get update
+echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
+sudo apt-get install -y oracle-java8-installer
 
 # install node
 
@@ -25,7 +26,7 @@ sudo apt-get install -y nodejs
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install yarn
-echo 'export PATH=$PATH:"/home/ubuntu/.yarn/bin":"/home/ubuntu/consul"' >> /home/ubuntu/.bashrc
+echo 'export PATH=$PATH:"/home/ubuntu/.yarn/bin":"/home/ubuntu/consult"' >> /home/ubuntu/.bashrc
 
 source /home/ubuntu/.bashrc
 yarn global add yo
@@ -56,5 +57,5 @@ yarn global add generator-jhipster
 sudo apt install unzip
 
 # Download consul
-#mkdir consult
-#curl -o consul/consul https://releases.hashicorp.com/consul/1.2.2/consul_1.2.2_linux_amd64.zip
+mkdir consult
+curl https://releases.hashicorp.com/consul/1.2.2/consul_1.2.2_linux_amd64.zip > consult/consult.zip
