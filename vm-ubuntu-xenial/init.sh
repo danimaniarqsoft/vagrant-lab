@@ -59,3 +59,6 @@ sudo apt install unzip
 # Download consul
 mkdir consult
 curl https://releases.hashicorp.com/consul/1.2.2/consul_1.2.2_linux_amd64.zip > consult/consult.zip
+sudo unzip /home/ubuntu/consult/consult.zip -d /home/ubuntu/consult/
+sudo rm -rf /home/ubuntu/consult/consult.zip
+
