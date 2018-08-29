@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# installa java
-
-# sudo apt-get install -y python-software-properties debconf-utils
-# sudo add-apt-repository -y ppa:webupd8team/java
-# sudo apt-get update
-# sudo apt-get install -y oracle-java8-installer
-
 # Install Java
 
 sudo apt-get install -y python-software-properties debconf-utils
@@ -26,9 +19,9 @@ sudo apt-get install -y nodejs
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install yarn
-echo 'export PATH=$PATH:"/home/ubuntu/.yarn/bin":"/home/ubuntu/consult"' >> /home/ubuntu/.bashrc
+echo 'export PATH=$PATH:"/home/vagrant/.yarn/bin":"/home/vagrant/consul"' >> /home/vagrant/.bashrc
 
-source /home/ubuntu/.bashrc
+source /home/vagrant/.bashrc
 yarn global add yo
 yarn global add generator-jhipster
 
@@ -57,8 +50,8 @@ yarn global add generator-jhipster
 sudo apt install unzip
 
 # Download consul
-mkdir consult
-curl https://releases.hashicorp.com/consul/1.2.2/consul_1.2.2_linux_amd64.zip > consult/consult.zip
-sudo unzip /home/ubuntu/consult/consult.zip -d /home/ubuntu/consult/
-sudo rm -rf /home/ubuntu/consult/consult.zip
+mkdir consul
+curl https://releases.hashicorp.com/consul/1.2.2/consul_1.2.2_linux_amd64.zip > consul/consul.zip
+sudo unzip /home/vagrant/consul/consul.zip -d /home/vagrant/consul/
+sudo rm -rf /home/vagrant/consul/consul.zip
 
