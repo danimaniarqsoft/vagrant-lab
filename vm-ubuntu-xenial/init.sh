@@ -19,9 +19,8 @@ sudo apt-get install -y nodejs
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install yarn
-echo 'export PATH=$PATH:"/home/vagrant/.yarn/bin":"/home/vagrant/consul"' >> /home/vagrant/.bashrc
-
-source /home/vagrant/.bashrc
+echo 'export PATH=$PATH:"'$HOME/.yarn/bin'":"'$HOME/consul'"' >> $HOME/.bashrc
+source $HOME/.bashrc
 yarn global add yo
 yarn global add generator-jhipster
 
@@ -52,6 +51,6 @@ sudo apt install unzip
 # Download consul
 mkdir consul
 curl https://releases.hashicorp.com/consul/1.2.2/consul_1.2.2_linux_amd64.zip > consul/consul.zip
-sudo unzip /home/vagrant/consul/consul.zip -d /home/vagrant/consul/
-sudo rm -rf /home/vagrant/consul/consul.zip
+sudo unzip $HOME/consul/consul.zip -d $HOME/consul/
+sudo rm -rf $HOME/consul/consul.zip
 
