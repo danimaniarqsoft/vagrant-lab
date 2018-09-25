@@ -36,24 +36,40 @@ source /etc/profile.d/java.sh
 source /etc/profile.d/java.csh
 
 ## Install Git
-sudo yum -y install git
+#sudo yum -y install git
 
 # Install NGINX
-sudo yum -y install epel-release
-sudo yum -y install nginx
-sudo systemctl start nginx
+#sudo yum -y install epel-release
+#sudo yum -y install nginx
+#sudo systemctl start nginx
 
 # Firawall Configuration
 
-sudo firewall-cmd --permanent --zone=public --add-service=http 
-sudo firewall-cmd --permanent --zone=public --add-service=https
-sudo firewall-cmd --reload
+#sudo firewall-cmd --permanent --zone=public --add-service=http 
+#sudo firewall-cmd --permanent --zone=public --add-service=https
+#sudo firewall-cmd --reload
 
+# Install DOcker 
+
+sudo yum -y check-update
+curl -fsSL https://get.docker.com/ | sh
+curl sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -aG docker vagrant
+
+# Install DOcker compose
+
+sudo yum install -y epel-release
+sudo yum install -y python-pip
+sudo pip install --upgrade pip
+sudo pip install backports.ssl_match_hostname --upgrade
+sudo pip install docker-compose
+sudo yum -y upgrade python*
 
 # Tools
 
 ## htop
 
-sudo yum -y install htop
+#sudo yum -y install htop
 
 ## 

@@ -1,0 +1,433 @@
+openapi: 3.0.0
+info:
+  title: Especificación API para la CNBV
+  description: |
+    Especificación Técnica del API para la CNBV
+    para mayor información, ir a
+    [sitio web de la CNBV](https://www.gob.mx/cnbv)
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: info@cnbv.gob.mx
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  version: "1.0.1"
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/cnbv/cnbv/1.0.0
+  - description: API local
+    url: http://localhost:8080
+tags:
+  - name: solicitud-reporte-resource
+    description: Servicios para la Solicitud de un Reporte
+  - name: reporte-resource
+    description: Servicios para Administrar Reportes
+paths:
+  '/api/reportes/{id}':
+    get:
+      tags:
+        - reporte-resource
+      summary: consultarReporteInfo
+      operationId: getReporteUsingGET
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Reporte'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - api_key: []
+  '/api/solicitudReportes/{id}/datos':
+    get:
+      tags:
+        - solicitud-reporte-resource
+      summary: consultarReporte
+      operationId: consultarReporteUsingGET
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: page
+          in: query
+          description: Page number of the requested page
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: size
+          in: query
+          description: Size of a page
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dato'
+          headers:
+            links:
+              schema:
+                type: string
+              description: links de navegacion paginado
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - api_key: []
+    put:
+      tags:
+        - solicitud-reporte-resource
+      summary: recibirReporte
+      operationId: recibirReporteUsingPUT
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: reporteCompletado
+          in: header
+          description: Especifica si el paquete de datos es el ultimo y por tanto la transferencia del reporte se ha completado
+          required: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Acuse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Dato'
+        description: datos
+        required: true
+      security:
+        - cnbv_auth:
+            - 'write:acuses'
+            - 'read:reportes'
+  '/api/solicitudReportes/{id}/estadoReporte':
+    put:
+      tags:
+        - solicitud-reporte-resource
+      summary: notificarEstado
+      operationId: notificarEstadoUsingPUT
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Acuse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EstadoReporte'
+        description: estadoReporte
+        required: true
+      security:
+        - cnbv_auth:
+            - 'write:acuses'
+            - 'read:reportes'
+    get:
+      tags:
+        - solicitud-reporte-resource
+      summary: consultarEstado
+      operationId: notificarEstadoUsingPUT
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EstadoReporte'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - cnbv_auth:
+            - 'write:acuses'
+            - 'read:reportes'
+components:
+  requestBodies:
+    Reporte:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Reporte'
+      description: reporte
+      required: true
+  schemas:
+    Acuse:
+      type: object
+      properties:
+        id:
+          type: string
+        cadenaOriginal:
+          type: string
+        fechaAcuse:
+          type: string
+          format: date
+        selloDigital:
+          type: string
+        solicitudReporte:
+          $ref: '#/components/schemas/SolicitudReporte'
+    Dato:
+      type: object
+      properties:
+        id:
+          type: string
+        cveConcepto:
+          type: string
+        cveMoneda:
+          type: integer
+          format: int32
+        datoImporte:
+          type: string
+        solicitudReporte:
+          $ref: '#/components/schemas/SolicitudReporte'
+    EstadoReporte:
+      type: object
+      properties:
+        id:
+          type: string
+        descripcion:
+          type: string
+        nombre:
+          type: string
+    Periodo:
+      type: object
+      properties:
+        id:
+          type: string
+        fechaFin:
+          type: string
+          format: date
+        fechaInicio:
+          type: string
+          format: date
+    Reporte:
+      type: object
+      properties:
+        id:
+          type: string
+        fechaLimiteRecepcion:
+          type: string
+          format: date
+        fechaSolicitud:
+          type: string
+          format: date
+        periodo:
+          $ref: '#/components/schemas/Periodo'
+        tipoFlujo:
+          $ref: '#/components/schemas/TipoFlujo'
+        tipoReporte:
+          $ref: '#/components/schemas/TipoReporte'
+        templateReporteCatalogoConceptos: 
+          $ref: '#/components/schemas/TemplateReporteCatalogoConceptos'
+    SolicitudReporte:
+      type: object
+      properties:
+        id:
+          type: string
+        estadoReporte:
+          $ref: '#/components/schemas/EstadoReporte'
+        fechaRecepcion:
+          type: string
+          format: date
+        numeroEnvios:
+          type: integer
+          format: int32
+        reporte:
+          $ref: '#/components/schemas/Reporte'
+        tipoFlujo:
+          $ref: '#/components/schemas/TipoFlujo'
+    TipoFlujo:
+      type: object
+      properties:
+        id:
+          type: string
+        descripcion:
+          type: string
+        nombre:
+          type: string
+    TipoReporte:
+      type: object
+      properties:
+        id:
+          type: string
+        descripcion:
+          type: string
+        nombre:
+          type: string
+    ColumnaReporte:
+        type: object
+        properties:
+          id:
+            type: string
+          nombre: 
+            type: string
+          min: 
+            type: string
+          max: 
+            type: string 
+          requerida:
+            type: boolean
+          formato: 
+            type: string
+          catalogoRelacionado: 
+            type: string
+    TemplateReporte:
+      type: object
+      properties:
+        id:
+          type: string
+        version: 
+          type: integer
+        descripcion:
+          type: string
+        descripcionCorta: 
+          type: string 
+        elementosPorPagina:
+          type: integer
+        maxErrores: 
+          type: integer
+        columnas:
+          type: array
+          items:
+            $ref: '#/components/schemas/ColumnaReporte'
+      
+    Concepto:
+      type: object
+      properties:
+        id:
+          type: string
+        concepto:
+          type: string
+        ordenPresentacion: 
+          type: integer
+        conceptoPadreId:
+          type: string
+    
+    CatalogoConceptos:
+      type: object
+      properties:
+        id:
+          type: string  
+        version: 
+          type: integer
+        conceptos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Concepto'
+    
+    TemplateReporteCatalogoConceptos:
+      type: object
+      properties:
+        id:
+          type: string
+        periodicidad:
+          type: string 
+        vigenciaInicio:
+          type: string
+          format: datetime
+        vigenciaFin:
+          type: string
+          format: datetime
+        TemplateReporte: 
+          $ref: '#/components/schemas/TemplateReporte'
+        catalogoConceptos:
+          $ref: '#/components/schemas/CatalogoConceptos'
+    CatalogoMoneda:
+      type: object
+      properties:
+        id: 
+          type: string
+        moneda:
+          type: string 
+  securitySchemes:
+    cnbv_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: 'http://cnbv.swagger.io/oauth/dialog'
+          scopes:
+            'write:acuses': crear notificaciones
+            'read:reportes': consultar reportes
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
